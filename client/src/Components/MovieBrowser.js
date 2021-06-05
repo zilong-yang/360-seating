@@ -1,4 +1,5 @@
-import React from 'react'
+import React from 'react';
+import MovieTile from './MovieTile';
 
 class MovieBrowser extends React.Component {
     constructor(props) {
@@ -33,14 +34,23 @@ class MovieBrowser extends React.Component {
     }
 
     render() {
+
+        const movieList = this.state.movies.map((movie, index) => {
+            return <MovieTile movie={movie} key={index}/>
+        });
+
         return (
             // return is HTML, using {} would allow JS
             // <div> should wrap the return values (there is only a single element)
-            <div>
-                {this.state.loading ?
-                    <p>Loading</p> :
-                    <p>Finished</p>}
-            </div>
+            // <p>Fisherman's Cinema</p>
+            <>
+                <p className="title">Fisherman's Cinema</p>
+                <div className="movieBrowserContainer">
+                    {this.state.loading ?
+                        <p>Loading</p> :
+                        movieList}
+                </div>
+            </>
         )
     }
 }
