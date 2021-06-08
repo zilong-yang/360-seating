@@ -1,25 +1,25 @@
 const mongoose = require('mongoose')
-const movieOrderDetailsSchema = require('./movieOrderDetailsSchema').schema;
+const movieOrderDetailsSchema = require('./movieOrderDetails').schema;
 const orderSchema = new mongoose.Schema({
     orderID:{
-        Type: Number,
+        type: Number,
         required: true
     },
     name:{
-        Type: String,
+        type: String,
         required: true
     },
     email:{
-        Type: String,
+        type: String,
         required: true
     },
     phoneNumber:{
-        Type: String,
+        type: String,
         required: true
     },
     movieOrderDetails: [movieOrderDetailsSchema],
     total:{
-        Type: Number
+        type: Number
     }   
 })
 
