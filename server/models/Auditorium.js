@@ -1,4 +1,5 @@
 const mongoose = require('mongoose');
+const SeatSchema = require('./Seat').schema;
 const auditoriumSchema = new mongoose.Schema({
 
     seats:[SeatSchema],

@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "devStart": "nodemon server.js"
+    "devStart": "nodemon server.js",
+    "data:import": "node data/data-seeding.js --import",
+    "data:delete": "node data/data-seeding.js --delete"
   },
   "author": "",
   "license": "ISC",

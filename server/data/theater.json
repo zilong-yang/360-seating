@@ -1,0 +1,42 @@
+{
+    "name": "fisheman's cinema",
+    "rooms": [
+        {
+            "seats": [
+                {
+                    "isAvailable": true,
+                    "seatViewUrl": "./aejdgfbai9usdfgbai.jpeg",
+                    "isHandicapped": true,
+                    "position": "F5"
+                },
+                {
+                    "isAvailable": true,
+                    "seatViewUrl": "./vaisdgviasdvbi.jpeg",
+                    "isHandicapped": true,
+                    "position": "F6"
+                }
+            ],
+            "roomNumber": 1,
+            "nowPlayingMovie": "Cruella"
+        },
+        {
+            "seats": [
+                {
+                    "isAvailable": true,
+                    "seatViewUrl": "./aejdgfbai9usdfgbai.jpeg",
+                    "isHandicapped": true,
+                    "position": "F5"
+                },
+                {
+                    "isAvailable": true,
+                    "seatViewUrl": "./vaisdgviasdvbi.jpeg",
+                    "isHandicapped": true,
+                    "position": "F6"
+                }
+            ],
+            "roomNumber": 2,
+            "nowPlayingMovie": "A Quiet Place II"
+        }
+    ],
+    "hoursOfOperation": "0800,0000"
+}
