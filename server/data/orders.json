@@ -1,0 +1,22 @@
+{
+    "orderID": 1234,
+    "name": "John Smith",
+    "email": "test@test.com",
+    "phoneNumber": "123-456-7890",
+    "movieOrderDetails": [
+        {
+            "movieName": "Cruella",
+            "movieStartTime": "1400",
+            "movieAuditorium": 1,
+            "seats": [
+                {
+                    "position": "F5"
+                },
+                {
+                    "position": "F6"
+                }
+            ]
+        }
+    ],
+    "total": 50
+}

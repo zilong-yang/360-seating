@@ -6,7 +6,10 @@ const cors = require('cors');
 const app = express();
 require('dotenv').config();
 
-const port = 5000;
+const port = process.env.PORT || 5000;
+
+// Enable Proxy
+app.enable('trust proxy');
 
 // Get Routes
 const userRoutes = require('./routes/userRoutes');

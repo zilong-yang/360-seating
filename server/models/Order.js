@@ -1,5 +1,5 @@
-const mongoose = require('mongoose')
-const movieOrderDetailsSchema = require('./movieOrderDetails').schema;
+const mongoose = require('mongoose');
+const movieOrderDetailsSchema = require('./MovieOrderDetails').schema;
 const orderSchema = new mongoose.Schema({
     orderID:{
         type: Number,
