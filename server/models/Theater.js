@@ -9,7 +9,7 @@ const theaterSchema = new mongoose.Schema({
     rooms: [AuditoriumSchema],
     hoursOfOperation: {
         type: String,
-        required
+        required: true
     }
 
 });
