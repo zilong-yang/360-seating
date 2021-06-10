@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import MovieDisplay from './MovieDisplay'
+import MovieDisplay from './MovieDisplay';
+import TicketCounter from './TicketCounter';
 
 class TicketSelection extends Component {
     constructor(props) {
@@ -7,8 +8,25 @@ class TicketSelection extends Component {
 
         this.state = {
             movie_detail: null,
-            loading: true
+            loading: true,
+            numOfChildTickets: 0,
+            numOfAdultTickets: 0,
+            numOfSeniorTickets: 0
         }
+    }
+
+    handleIncrement = (e) => {
+        e.preventDefault();
+        this.setState({
+            [e.target.name]: this.state[e.target.name] + 1
+        })
+    }
+
+    handleDecrement = (e) => {
+        e.preventDefault();
+        this.setState({
+            [e.target.name]: this.state[e.target.name] - 1
+        })
     }
 
     async componentDidMount() {
@@ -37,7 +55,14 @@ class TicketSelection extends Component {
             <div className="ticketSelectionContainter">
                 {this.state.loading ?
                     <p>Loading</p> :
-                    <MovieDisplay movie={this.state.movie_detail}/> 
+                    <>
+                        <MovieDisplay movie={this.state.movie_detail}/> 
+                        <div className="TicketSelector">
+                            <TicketCounter decrementFunc={this.handleDecrement} incrementFunc={this.handleIncrement} name={"numOfChildTickets"} ticketCount={this.state.numOfChildTickets} ticketType={"Child"}/>
+                            <TicketCounter decrementFunc={this.handleDecrement} incrementFunc={this.handleIncrement} name={"numOfAdultTickets"} ticketCount={this.state.numOfAdultTickets} ticketType={"Adult"}/>
+                            <TicketCounter decrementFunc={this.handleDecrement} incrementFunc={this.handleIncrement} name={"numOfSeniorTickets"} ticketCount={this.state.numOfSeniorTickets} ticketType={"Senior"}/>
+                        </div>
+                    </>
                 }
             </div>
         );

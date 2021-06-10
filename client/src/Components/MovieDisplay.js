@@ -3,6 +3,7 @@ import React from 'react';
 const imageUrl = "http://image.tmdb.org/t/p/w300/";
 
 class MovieDisplay extends React.Component {
+
     render() {
         return (
             <div className="page-info">
@@ -49,9 +50,6 @@ class MovieDisplay extends React.Component {
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div className="TicketSelector">
-                            
                         </div>
                     </div>
                 </div>
