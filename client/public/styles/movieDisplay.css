@@ -1,0 +1,57 @@
+.page-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+    gap: 0px 0px;
+    grid-auto-flow: row;
+    grid-template-areas:
+      "film-poster film-poster movie-title movie-title movie-title"
+      "film-poster film-poster movie-description movie-description movie-description"
+      "film-poster film-poster movie-description movie-description movie-description"
+      "film-rating film-rating extra-details extra-details extra-details"
+      "tickets tickets tickets tickets tickets";
+}
+
+.film-poster {
+    grid-area: film-poster;
+    width: 100%;
+    padding: 10px;
+    position: relative;
+    overflow: hidden;
+}
+
+.film-rating {
+    grid-area: film-rating;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    text-align: center;
+    margin: 15px 0px;
+}
+
+.movie-title {
+    grid-area: movie-title;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    text-align: center;
+    margin: 15px 0px;
+}
+
+.movie-description {
+    grid-area: movie-description;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+    margin-bottom: 15px;
+    line-height: 1.5em;
+    text-align: left;
+}
+
+.extra-details { 
+    grid-area: extra-details;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: white;
+}
+  
+.tickets { 
+    grid-area: tickets; 
+}
+  
