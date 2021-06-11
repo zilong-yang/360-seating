@@ -1,57 +1,136 @@
-.page-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
-    grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
-    gap: 0px 0px;
-    grid-auto-flow: row;
-    grid-template-areas:
-      "film-poster film-poster movie-title movie-title movie-title"
-      "film-poster film-poster movie-description movie-description movie-description"
-      "film-poster film-poster movie-description movie-description movie-description"
-      "film-rating film-rating extra-details extra-details extra-details"
-      "tickets tickets tickets tickets tickets";
+.content {
+    padding-top: 3rem;
+    padding-bottom: 3rem;
 }
 
-.film-poster {
-    grid-area: film-poster;
-    width: 100%;
-    padding: 10px;
-    position: relative;
-    overflow: hidden;
+.movie-info {
+    max-width: 1140px;
+    padding-right: 3rem;
+    padding-left: 3rem;
+    margin-right: auto;
+    margin-left: auto;
 }
 
-.film-rating {
-    grid-area: film-rating;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: white;
-    text-align: center;
-    margin: 15px 0px;
+.row {
+    --bs-gutter-y: 0;
+    display: flex;
+    flex-wrap: wrap;
+    margin-top: calc(var(--bs-gutter-y) * -1);
+    margin-right: calc(var(--bs-gutter-x) / -2);
+    margin-left: calc(var(--bs-gutter-x) / -2);
+}
+
+.col {
+    flex: 0 0 auto;
+    width: 50%;
+}
+
+.movie-poster {
+    border-top-left-radius: calc(0.25rem - 1px);
+    border-top-right-radius: calc(0.25rem - 1px);
+    width: 75%
 }
 
 .movie-title {
-    grid-area: movie-title;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: white;
+    font-size: calc(1.425rem + 2.1vw);
+    font-weight: 300;
+    line-height: 1.2;
+    font-weight: bolder;
+}
+
+.review-rating-block {
+    font-size: 1.25rem;
+    margin-bottom: 3rem;
+}
+
+.movie-overview {
+    font-size: 1.25rem;
+    font-weight: 300;
+}
+
+.extra-details {
+    margin-top: 1rem;
+    margin-bottom: 0.25rem;
+    font-size: 0.85em;
+}
+
+.ticket-container {
+    display: inline-flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    min-width: 600px;
+    max-width: 1140px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-top: 2rem;
     text-align: center;
-    margin: 15px 0px;
+    font-family: var(--bs-font-sans-serif);
+    border-radius: 25px;
+    background: rgba(211, 158, 158, 0.671);
 }
 
-.movie-description {
-    grid-area: movie-description;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: white;
-    margin-bottom: 15px;
-    line-height: 1.5em;
-    text-align: left;
+.ticket-btn-grou {
+    width: 100%;
+    text-align: center;
 }
 
-.extra-details { 
-    grid-area: extra-details;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: white;
+.ticket-btn {
+    display: inline-block;
+    border-radius: 5px;
+    margin: 5px;
+    font-family: var(--bs-font-sans-serif);
+    color: #ffffff;
+    font-size: 1rem;
+    font-weight: 300;
+    border: 0;
+    padding: 0.5em 1em;
+    margin: 0.5em 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.1);
+    -webkit-transition: .2s;
 }
-  
-.tickets { 
-    grid-area: tickets; 
+
+.ticket-btn:hover {
+    background: rgba(0, 0, 0, 0.3);
 }
-  
+
+.ticket-btn:active {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+#ticket-decr:active {
+    -webkit-transform: translateY(1em);
+}
+
+#ticket-incr:active {
+    -webkit-transform: translateY(-1em);
+}
+
+
+body {
+    margin: 0;
+    font-family: var(--bs-font-sans-serif);
+    font-size: 1rem;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #ffffff;
+    background-color: rgb(0, 0, 0);
+    -webkit-text-size-adjust: 100%;
+    -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+}
+
+p {
+    display: block;
+    margin-block-start: 1em;
+    margin-block-end: 1em;
+    margin-inline-start: 0px;
+    margin-inline-end: 0px;
+}
+
+img {
+    vertical-align: middle;
+}
+
+div {
+    display: block;
+}

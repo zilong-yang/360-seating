@@ -29,6 +29,13 @@ class TicketSelection extends Component {
         })
     }
 
+    handleReset = (e) => {
+        e.preventDefault();
+        this.setState({
+            [e.target.name]: 0
+        })
+    }
+
     async componentDidMount() {
         const api_key = process.env.REACT_APP_TMDB_API_KEY
         const movie_id = this.props.match.params.movieID
@@ -56,11 +63,13 @@ class TicketSelection extends Component {
                 {this.state.loading ?
                     <p>Loading</p> :
                     <>
-                        <MovieDisplay movie={this.state.movie_detail}/> 
-                        <div className="TicketSelector">
-                            <TicketCounter decrementFunc={this.handleDecrement} incrementFunc={this.handleIncrement} name={"numOfChildTickets"} ticketCount={this.state.numOfChildTickets} ticketType={"Child"}/>
-                            <TicketCounter decrementFunc={this.handleDecrement} incrementFunc={this.handleIncrement} name={"numOfAdultTickets"} ticketCount={this.state.numOfAdultTickets} ticketType={"Adult"}/>
-                            <TicketCounter decrementFunc={this.handleDecrement} incrementFunc={this.handleIncrement} name={"numOfSeniorTickets"} ticketCount={this.state.numOfSeniorTickets} ticketType={"Senior"}/>
+                        <MovieDisplay movie={this.state.movie_detail} />
+                        <div className="row">
+                            <div className="ticket-container">
+                                <TicketCounter decrementFunc={this.handleDecrement} resetFunc={this.handleReset} incrementFunc={this.handleIncrement} name={"numOfChildTickets"} ticketCount={this.state.numOfChildTickets} ticketType={"Child"} />
+                                <TicketCounter decrementFunc={this.handleDecrement} resetFunc={this.handleReset} incrementFunc={this.handleIncrement} name={"numOfAdultTickets"} ticketCount={this.state.numOfAdultTickets} ticketType={"Adult"} />
+                                <TicketCounter decrementFunc={this.handleDecrement} resetFunc={this.handleReset} incrementFunc={this.handleIncrement} name={"numOfSeniorTickets"} ticketCount={this.state.numOfSeniorTickets} ticketType={"Senior"} />
+                            </div>
                         </div>
                     </>
                 }
