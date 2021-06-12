@@ -2,7 +2,14 @@
 	position: fixed;
 	margin: 50px;
 	bottom: 0;
+}
+
+.back-button-container {
 	left: 0;
+}
+
+.next-button-container {
+	right: 0;
 }
 
 .nav-button {

@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import {Link} from "react-router-dom";
+import { Link } from "react-router-dom";
 
 class BackButton extends Component {
 
@@ -9,9 +9,9 @@ class BackButton extends Component {
 
     render() {
         return (
-            <div className="nav-button-container back-button-container">
+            <div className="nav-button-container next-button-container">
                 <Link to={this.props.link}>
-                    <i className="fas fa-arrow-circle-left fa-3x nav-button back-button">
+                    <i className="fas fa-arrow-circle-right fa-3x nav-button next-button">
                     </i>
                 </Link>
             </div>

@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import MovieDisplay from './MovieDisplay';
 import TicketCounter from './TicketCounter';
 import BackButton from "./BackButton";
+import NextButton from "./NextButton";
 
 class TicketSelection extends Component {
     constructor(props) {
@@ -73,6 +74,7 @@ class TicketSelection extends Component {
                             </div>
                         </div>
                         <BackButton link="/" name="Back" />
+                        <NextButton />
                     </>
                 }
             </div>
