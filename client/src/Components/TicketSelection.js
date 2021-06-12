@@ -20,16 +20,20 @@ class TicketSelection extends Component {
 
     handleIncrement = (e) => {
         e.preventDefault();
+        let inc = this.state[e.target.name] + 1;
         this.setState({
-            [e.target.name]: this.state[e.target.name] + 1
-        })
+            [e.target.name]: inc
+        });
+        return inc;
     }
 
     handleDecrement = (e) => {
         e.preventDefault();
+        let dec = this.state[e.target.name] - 1
         this.setState({
-            [e.target.name]: this.state[e.target.name] - 1
-        })
+            [e.target.name]: dec
+        });
+        return dec;
     }
 
     handleReset = (e) => {
@@ -74,6 +78,7 @@ class TicketSelection extends Component {
                                     name={"numOfChildTickets"}
                                     ticketCount={this.state.numOfChildTickets}
                                     ticketType={"Child"}
+                                    setter={this.props.setters.setNumChildren}
                                 />
                                 <TicketCounter
                                     decrementFunc={this.handleDecrement}
@@ -82,6 +87,7 @@ class TicketSelection extends Component {
                                     name={"numOfAdultTickets"}
                                     ticketCount={this.state.numOfAdultTickets}
                                     ticketType={"Adult"}
+                                    setter={this.props.setters.setNumAdults}
                                 />
                                 <TicketCounter
                                     decrementFunc={this.handleDecrement}
@@ -90,6 +96,7 @@ class TicketSelection extends Component {
                                     name={"numOfSeniorTickets"}
                                     ticketCount={this.state.numOfSeniorTickets}
                                     ticketType={"Senior"}
+                                    setter={this.props.setters.setNumSeniors}
                                 />
                             </div>
                         </div>
