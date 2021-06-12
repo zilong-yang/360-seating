@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, {Component} from 'react';
 import MovieDisplay from './MovieDisplay';
 import TicketCounter from './TicketCounter';
 import BackButton from "./BackButton";
@@ -65,16 +65,38 @@ class TicketSelection extends Component {
                 {this.state.loading ?
                     <p>Loading</p> :
                     <>
-                        <MovieDisplay movie={this.state.movie_detail} />
+                        <MovieDisplay movie={this.state.movie_detail}/>
                         <div className="row">
                             <div className="ticket-container">
-                                <TicketCounter decrementFunc={this.handleDecrement} resetFunc={this.handleReset} incrementFunc={this.handleIncrement} name={"numOfChildTickets"} ticketCount={this.state.numOfChildTickets} ticketType={"Child"} />
-                                <TicketCounter decrementFunc={this.handleDecrement} resetFunc={this.handleReset} incrementFunc={this.handleIncrement} name={"numOfAdultTickets"} ticketCount={this.state.numOfAdultTickets} ticketType={"Adult"} />
-                                <TicketCounter decrementFunc={this.handleDecrement} resetFunc={this.handleReset} incrementFunc={this.handleIncrement} name={"numOfSeniorTickets"} ticketCount={this.state.numOfSeniorTickets} ticketType={"Senior"} />
+                                <TicketCounter
+                                    decrementFunc={this.handleDecrement}
+                                    resetFunc={this.handleReset}
+                                    incrementFunc={this.handleIncrement}
+                                    name={"numOfChildTickets"}
+                                    ticketCount={this.state.numOfChildTickets}
+                                    ticketType={"Child"}
+                                />
+                                <TicketCounter
+                                    decrementFunc={this.handleDecrement}
+                                    resetFunc={this.handleReset}
+                                    incrementFunc={this.handleIncrement}
+                                    name={"numOfAdultTickets"}
+                                    ticketCount={this.state.numOfAdultTickets}
+                                    ticketType={"Adult"}
+                                />
+                                <TicketCounter
+                                    decrementFunc={this.handleDecrement}
+                                    resetFunc={this.handleReset}
+                                    incrementFunc={this.handleIncrement}
+                                    name={"numOfSeniorTickets"}
+                                    ticketCount={this.state.numOfSeniorTickets}
+                                    ticketType={"Senior"}
+                                />
                             </div>
                         </div>
-                        <BackButton link="/" name="Back" />
-                        <NextButton />
+
+                        <BackButton link="/"/>
+                        <NextButton />  {/* TODO: add `link` prop once next page is created */}
                     </>
                 }
             </div>
