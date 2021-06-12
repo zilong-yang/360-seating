@@ -1,22 +1,23 @@
-import React, { Component } from "react";
-import { Link } from "react-router-dom";
+import React from "react";
+import {useHistory} from "react-router-dom";
 
-class BackButton extends Component {
+function NextButton(props) {
 
-    constructor(props) {
-        super(props);
+    const history = useHistory();
+
+    const changeRoute = () => {
+        history.push(props.link);
     }
 
-    render() {
-        return (
-            <div className="nav-button-container next-button-container">
-                <Link to={this.props.link}>
-                    <i className="fas fa-arrow-circle-right fa-3x nav-button next-button">
-                    </i>
-                </Link>
-            </div>
-        )
-    }
+    return (
+        <div className="nav-button-container next-button-container">
+            <i
+                className="fas fa-arrow-circle-right fa-3x nav-button next-button"
+                onClick={changeRoute}
+            >
+            </i>
+        </div>
+    )
 }
 
-export default BackButton;
+export default NextButton;
