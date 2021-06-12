@@ -10,7 +10,7 @@ class MovieDisplay extends React.Component {
                 <div className="movie-info">
                     <div className="row">
                         <div className="col">
-                            <img class="movie-poster" src={imageUrl + this.props.movie.poster_path} alt={this.props.movie.original_title} />
+                            <img className="movie-poster" src={imageUrl + this.props.movie.poster_path} alt={this.props.movie.original_title} />
                         </div>
                         <div className="col">
                             <h1 className="movie-title">
