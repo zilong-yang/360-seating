@@ -1,6 +1,7 @@
 import React, {Component} from 'react';
 import MovieDisplay from './MovieDisplay';
 import TicketCounter from './TicketCounter';
+import MoviesDataService from '../services/Movies';
 import BackButton from "./BackButton";
 import NextButton from "./NextButton";
 
@@ -39,12 +40,8 @@ class TicketSelection extends Component {
     }
 
     async componentDidMount() {
-        const api_key = process.env.REACT_APP_TMDB_API_KEY
         const movie_id = this.props.match.params.movieID
-
-        const fetch_movie =
-            await fetch(`https://api.themoviedb.org/3/movie/${movie_id}?api_key=${api_key}&language=en-US`)
-        const selected_movie = await fetch_movie.json()
+        const selected_movie = await MoviesDataService.fetchMovie(movie_id);
         console.log(selected_movie)
 
         this.setState(

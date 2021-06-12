@@ -1,5 +1,6 @@
 import React from 'react';
 import MovieTile from './MovieTile';
+import MoviesDataService from '../services/Movies'
 
 class MovieBrowser extends React.Component {
     constructor(props) {
@@ -14,11 +15,7 @@ class MovieBrowser extends React.Component {
 
     // Performing API Call
     async componentDidMount() {
-        const api_key = process.env.REACT_APP_TMDB_API_KEY
-
-        const fetch_movies =
-            await fetch(`https://api.themoviedb.org/3/movie/now_playing?api_key=${api_key}&language=en-US&page=1`)
-        const movies = await fetch_movies.json()
+        const movies = await MoviesDataService.fetchNowPlaying();
         console.log(movies)
 
         this.setState(
