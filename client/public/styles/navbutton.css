@@ -1,0 +1,15 @@
+.nav-button-container {
+	position: fixed;
+	margin: 50px;
+	bottom: 0;
+	left: 0;
+}
+
+.nav-button {
+	transition-duration: 250ms;
+}
+
+.nav-button:hover {
+	transition-duration: 250ms;
+	padding-bottom: 10px;
+}

@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import MovieDisplay from './MovieDisplay';
 import TicketCounter from './TicketCounter';
+import BackButton from "./BackButton";
 
 class TicketSelection extends Component {
     constructor(props) {
@@ -71,6 +72,7 @@ class TicketSelection extends Component {
                                 <TicketCounter decrementFunc={this.handleDecrement} resetFunc={this.handleReset} incrementFunc={this.handleIncrement} name={"numOfSeniorTickets"} ticketCount={this.state.numOfSeniorTickets} ticketType={"Senior"} />
                             </div>
                         </div>
+                        <BackButton link="/" name="Back" />
                     </>
                 }
             </div>
