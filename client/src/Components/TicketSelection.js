@@ -54,6 +54,8 @@ class TicketSelection extends Component {
                 console.log(this.state.movie)
             }
         )
+
+        this.props.setters.setMovieName(this.state.movie_detail.original_title);
     }
 
     render() {

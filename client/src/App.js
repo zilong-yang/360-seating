@@ -5,8 +5,9 @@ import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 require('dotenv').config()
 
-function App(props) {
+function App() {
 
+    // order detail
     const [movieName, setMovieName] = useState("");
     const [movieTime, setMovieTime] = useState("");
     const [numAdults, setNumAdults] = useState(0);
@@ -20,11 +21,19 @@ function App(props) {
             <Router>
                 <Switch>
                     <Route path="/" exact render={(props) => (
-                        <MovieBrowser {...props} setters={[setMovieName]}/>
+                        <MovieBrowser {...props} />
                     )}/>
                     <Route path="/tickets/:movieID" exact render={(props) => (
-                        <TicketSelection {...props}
-                            setters={[setMovieTime, setNumAdults, setNumChildren, setNumSeniors]} />
+                        <TicketSelection
+                            {...props}
+                            setters={{
+                                setMovieName: setMovieName,
+                                setMovieTime: setMovieTime,
+                                setNumAdults: setNumAdults,
+                                setNumChildren: setNumChildren,
+                                setNumSeniors: setNumSeniors,
+                            }}
+                        />
                     )}/>
                 </Switch>
             </Router>
