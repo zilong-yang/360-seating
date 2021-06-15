@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 import MovieDisplay from './MovieDisplay';
 import TicketCounter from './TicketCounter';
 import MoviesDataService from '../services/Movies';
@@ -68,7 +68,7 @@ class TicketSelection extends Component {
                 {this.state.loading ?
                     <p>Loading</p> :
                     <>
-                        <MovieDisplay movie={this.state.movie_detail}/>
+                        <MovieDisplay movie={this.state.movie_detail} />
                         <div className="row">
                             <div className="ticket-container">
                                 <TicketCounter
@@ -101,7 +101,7 @@ class TicketSelection extends Component {
                             </div>
                         </div>
 
-                        <BackButton link="/"/>
+                        <BackButton link="/" />
                         <NextButton />  {/* TODO: add `link` prop once next page is created */}
                     </>
                 }

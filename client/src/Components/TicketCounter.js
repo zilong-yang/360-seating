@@ -1,4 +1,4 @@
-import React, {Component} from 'react';
+import React, { Component } from 'react';
 
 class TicketCounter extends Component {
 
@@ -7,7 +7,6 @@ class TicketCounter extends Component {
 
         this.handleIncOnClick = this.handleIncOnClick.bind(this);
         this.handleDecOnClick = this.handleDecOnClick.bind(this);
-        this.handleResetOnClick = this.handleResetOnClick.bind(this);
     }
 
     // increment corresponding counter and set order state to new value
@@ -22,43 +21,31 @@ class TicketCounter extends Component {
         this.props.setter(n);
     }
 
-    // empty corresponding counter and set order state to 0
-    handleResetOnClick(e) {
-        this.props.resetFunc(e);
-        this.props.setter(0);
-    }
-
     render() {
         return (
-            <div className="ticket-btn-group">
-                <p>{this.props.ticketType}</p>
-                <p>{this.props.ticketCount}</p>
-                <button
-                    className="ticket-btn"
-                    id="ticket-incr"
-                    name={this.props.name}
-                    onClick={this.handleIncOnClick}
-                >
-                    +1
-                </button>
+            <div className="ticket-btn-grp">
+                <div className="ticket-btn">
+                    <i
+                        className="fas fa-minus-circle"
+                        name={this.props.name}
+                        onClick={this.handleDecOnClick}
+                    >
+                    </i>
+                </div>
 
-                <button
-                    className="ticket-btn"
-                    id="ticket-res"
-                    name={this.props.name}
-                    onClick={this.handleResetOnClick}
-                >
-                    Reset
-                </button>
+                <div className="ticket-btn-msg">
+                    <h2 className="ticket-type">{this.props.ticketType}</h2>
+                    <p>{this.props.ticketCount}</p>
+                </div>
 
-                <button
-                    className="ticket-btn"
-                    id="ticket-decr"
-                    name={this.props.name}
-                    onClick={this.handleDecOnClick}
-                >
-                    -1
-                </button>
+                <div className="ticket-btn">
+                    <i
+                        className="fas fa-plus-circle"
+                        name={this.props.name}
+                        onClick={this.handleIncOnClick}
+                    >
+                    </i>
+                </div>
             </div>
         );
     }
