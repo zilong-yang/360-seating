@@ -32,3 +32,17 @@ exports.mapAuditoriums = async (req, res) => {
         console.log(e);
     }
 }
+
+exports.getAuditoriumAvailability = async (req, res) => {
+    const roomNumber = req.params.roomNumber;
+
+    const theater = await Theater.findOne().lean();
+
+    const room = theater.rooms.find(room => {
+        return room.roomNumber == roomNumber;
+    });
+
+    res.json({
+        "room": room
+    })
+}
