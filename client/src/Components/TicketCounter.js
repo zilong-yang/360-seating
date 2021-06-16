@@ -22,30 +22,33 @@ class TicketCounter extends Component {
     }
 
     render() {
+        const isZero = this.props.ticketCount === 0;
+
         return (
             <div className="ticket-btn-grp">
-                <div className="ticket-btn">
+                {isZero ? (
+                    <i className="dummy-btn"></i>
+                ) : (
                     <i
-                        className="fas fa-minus-circle"
-                        name={this.props.name}
+                        className="fas fa-minus-circle fa-2x ticket-btn"
+                        id={this.props.name}
                         onClick={this.handleDecOnClick}
                     >
                     </i>
-                </div>
+                )
+                }
 
                 <div className="ticket-btn-msg">
                     <h2 className="ticket-type">{this.props.ticketType}</h2>
                     <p>{this.props.ticketCount}</p>
                 </div>
 
-                <div className="ticket-btn">
-                    <i
-                        className="fas fa-plus-circle"
-                        name={this.props.name}
-                        onClick={this.handleIncOnClick}
-                    >
-                    </i>
-                </div>
+                <i
+                    className="fas fa-plus-circle fa-2x ticket-btn"
+                    id={this.props.name}
+                    onClick={this.handleIncOnClick}
+                >
+                </i>
             </div>
         );
     }

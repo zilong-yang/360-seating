@@ -20,18 +20,18 @@ class TicketSelection extends Component {
 
     handleIncrement = (e) => {
         e.preventDefault();
-        let inc = this.state[e.target.name] + 1;
+        let inc = this.state[e.target.id] + 1;
         this.setState({
-            [e.target.name]: inc
+            [e.target.id]: inc
         });
         return inc;
     }
 
     handleDecrement = (e) => {
         e.preventDefault();
-        let dec = this.state[e.target.name] - 1
+        let dec = this.state[e.target.id] - 1
         this.setState({
-            [e.target.name]: dec
+            [e.target.id]: dec
         });
         return dec;
     }

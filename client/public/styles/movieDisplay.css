@@ -1,6 +1,6 @@
 .content {
-    padding-top: 3rem;
-    padding-bottom: 3rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
 }
 
 .movie-info {
@@ -62,21 +62,21 @@
     margin-right: auto;
     margin-left: auto;
     border-radius: 25px;
-    background: rgba(211, 158, 158, 0.671);
+    background: rgba(107, 105, 105, 0.726);
 }
 
 .ticket-btn-grp {
     display: flex;
-    justify-content: space-evenly;
+    justify-content: space-between;
     max-width: 100%;
-    margin: 10px 0;
+    margin: 10px 0px;
 }
 
 .ticket-btn-msg {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     font-size: 1.75rem;
     line-height: 1rem;
-    font-weight: 600;
+    font-weight: 400;
     margin-bottom: 0.5rem;
     min-width: 97px;
     width: 100%;
@@ -85,37 +85,38 @@
 .ticket-type {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
     color: #ffffff;
-    font-size: 2rem;
+    font-size: 1.75rem;
     font-weight: 600;
 }
 
 .ticket-btn {
-    display: inline-block;
-    border-radius: 5px;
-    margin: 5px;
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #ffffff;
-    font-size: 1rem;
-    font-weight: 300;
-    border: 0;
     padding: 1rem 1rem;
     margin: 1.5rem 1.5rem;
-    width: 100%;
-    background: rgba(0, 0, 0, 0.1);
+}
+
+.dummy-btn {
+    padding: 1rem 1rem;
+    margin: 1.5rem 1.5rem;
+    min-width: 32px;
 }
 
 .ticket-btn:hover {
-    background: rgba(0, 0, 0, 0.3);
+    cursor: pointer;
 }
 
 .ticket-btn:active {
     background: rgba(0, 0, 0, 0.5);
 }
 
+.ticket-btn:disabled {
+    opacity: 0.5;
+    pointer-events: none;
+}
+
 body {
     margin: 0;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-size: 1rem;
+    font-size: 1.25rem;
     font-weight: 400;
     line-height: 1.5;
     color: #ffffff;
