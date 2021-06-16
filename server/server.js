@@ -13,6 +13,7 @@ app.enable('trust proxy');
 
 // Get Routes
 const userRoutes = require('./routes/userRoutes');
+const theaterRoutes = require('./routes/theaterRoutes');
 
 // Morgan Middleware
 app.use(morgan('dev'));
@@ -25,7 +26,8 @@ const db_uri = process.env.DB_URI;
 
 mongoose.connect(db_uri, {
     useNewUrlParser: true,
-    useUnifiedTopology: true
+    useUnifiedTopology: true,
+    useFindAndModify: false
 }).then(() => {
     console.log("Connected to MongoDB...");
 }).catch((err) => {
@@ -34,6 +36,7 @@ mongoose.connect(db_uri, {
 
 // Use Routes
 app.use("/users", userRoutes);
+app.use("/theater", theaterRoutes);
 
 // Listen on selected port
 app.listen(port, () => {
