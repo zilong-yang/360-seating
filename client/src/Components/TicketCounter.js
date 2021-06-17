@@ -27,7 +27,10 @@ class TicketCounter extends Component {
         return (
             <div className="ticket-btn-grp">
                 {isZero ? (
-                    <i className="dummy-btn"></i>
+                    <i
+                        className="fas fa-minus-circle fa-2x dummy-btn"
+                    >
+                    </i>
                 ) : (
                     <i
                         className="fas fa-minus-circle fa-2x ticket-btn"
