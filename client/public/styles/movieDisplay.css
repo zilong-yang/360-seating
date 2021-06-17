@@ -12,12 +12,8 @@
 }
 
 .row {
-    --bs-gutter-y: 0;
     display: flex;
     flex-wrap: wrap;
-    margin-top: calc(var(--bs-gutter-y) * -1);
-    margin-right: calc(var(--bs-gutter-x) / -2);
-    margin-left: calc(var(--bs-gutter-x) / -2);
 }
 
 .col {
@@ -26,13 +22,11 @@
 }
 
 .movie-poster {
-    border-top-left-radius: calc(0.25rem - 1px);
-    border-top-right-radius: calc(0.25rem - 1px);
     width: 70%
 }
 
 .movie-title {
-    font-size: calc(1.425rem + 2.1vw);
+    font-size: 3rem;
     font-weight: 300;
     line-height: 1.2;
     font-weight: bolder;
@@ -61,8 +55,6 @@
     align-items: center;
     margin-right: auto;
     margin-left: auto;
-    border-radius: 25px;
-    background: rgba(107, 105, 105, 0.726);
 }
 
 .ticket-btn-grp {
