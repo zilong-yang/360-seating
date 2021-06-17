@@ -1,5 +1,6 @@
 {
     "name": "fisheman's cinema",
+    "theaterId": "12345",
     "rooms": [
         {
             "seats": [
@@ -36,6 +37,330 @@
             ],
             "roomNumber": 2,
             "nowPlayingMovie": "A Quiet Place II"
+        },
+        {
+            "seats": [
+                {
+                    "isAvailable": true,
+                    "seatViewUrl": "./aejdgfbai9usdfgbai.jpeg",
+                    "isHandicapped": true,
+                    "position": "F5"
+                },
+                {
+                    "isAvailable": true,
+                    "seatViewUrl": "./vaisdgviasdvbi.jpeg",
+                    "isHandicapped": true,
+                    "position": "F6"
+                }
+            ],
+            "roomNumber": 3,
+            "nowPlayingMovie": "Cruella"
+        },
+        {
+            "seats": [
+                {
+                    "isAvailable": true,
+                    "seatViewUrl": "./aejdgfbai9usdfgbai.jpeg",
+                    "isHandicapped": true,
+                    "position": "F5"
+                },
+                {
+                    "isAvailable": true,
+                    "seatViewUrl": "./vaisdgviasdvbi.jpeg",
+                    "isHandicapped": true,
+                    "position": "F6"
+                }
+            ],
+            "roomNumber": 4,
+            "nowPlayingMovie": "Cruella"
+        },
+        {
+            "seats": [
+                {
+                    "isAvailable": true,
+                    "seatViewUrl": "./aejdgfbai9usdfgbai.jpeg",
+                    "isHandicapped": true,
+                    "position": "F5"
+                },
+                {
+                    "isAvailable": true,
+                    "seatViewUrl": "./vaisdgviasdvbi.jpeg",
+                    "isHandicapped": true,
+                    "position": "F6"
+                }
+            ],
+            "roomNumber": 5,
+            "nowPlayingMovie": "Cruella"
+        },
+        {
+            "seats": [
+                {
+                    "isAvailable": true,
+                    "seatViewUrl": "./aejdgfbai9usdfgbai.jpeg",
+                    "isHandicapped": true,
+                    "position": "F5"
+                },
+                {
+                    "isAvailable": true,
+                    "seatViewUrl": "./vaisdgviasdvbi.jpeg",
+                    "isHandicapped": true,
+                    "position": "F6"
+                }
+            ],
+            "roomNumber": 6,
+            "nowPlayingMovie": "Cruella"
+        },
+        {
+            "seats": [
+                {
+                    "isAvailable": true,
+                    "seatViewUrl": "./aejdgfbai9usdfgbai.jpeg",
+                    "isHandicapped": true,
+                    "position": "F5"
+                },
+                {
+                    "isAvailable": true,
+                    "seatViewUrl": "./vaisdgviasdvbi.jpeg",
+                    "isHandicapped": true,
+                    "position": "F6"
+                }
+            ],
+            "roomNumber": 7,
+            "nowPlayingMovie": "Cruella"
+        },
+        {
+            "seats": [
+                {
+                    "isAvailable": true,
+                    "seatViewUrl": "./aejdgfbai9usdfgbai.jpeg",
+                    "isHandicapped": true,
+                    "position": "F5"
+                },
+                {
+                    "isAvailable": true,
+                    "seatViewUrl": "./vaisdgviasdvbi.jpeg",
+                    "isHandicapped": true,
+                    "position": "F6"
+                }
+            ],
+            "roomNumber": 8,
+            "nowPlayingMovie": "Cruella"
+        },
+        {
+            "seats": [
+                {
+                    "isAvailable": true,
+                    "seatViewUrl": "./aejdgfbai9usdfgbai.jpeg",
+                    "isHandicapped": true,
+                    "position": "F5"
+                },
+                {
+                    "isAvailable": true,
+                    "seatViewUrl": "./vaisdgviasdvbi.jpeg",
+                    "isHandicapped": true,
+                    "position": "F6"
+                }
+            ],
+            "roomNumber": 9,
+            "nowPlayingMovie": "Cruella"
+        },
+        {
+            "seats": [
+                {
+                    "isAvailable": true,
+                    "seatViewUrl": "./aejdgfbai9usdfgbai.jpeg",
+                    "isHandicapped": true,
+                    "position": "F5"
+                },
+                {
+                    "isAvailable": true,
+                    "seatViewUrl": "./vaisdgviasdvbi.jpeg",
+                    "isHandicapped": true,
+                    "position": "F6"
+                }
+            ],
+            "roomNumber": 10,
+            "nowPlayingMovie": "Cruella"
+        },
+        {
+            "seats": [
+                {
+                    "isAvailable": true,
+                    "seatViewUrl": "./aejdgfbai9usdfgbai.jpeg",
+                    "isHandicapped": true,
+                    "position": "F5"
+                },
+                {
+                    "isAvailable": true,
+                    "seatViewUrl": "./vaisdgviasdvbi.jpeg",
+                    "isHandicapped": true,
+                    "position": "F6"
+                }
+            ],
+            "roomNumber": 11,
+            "nowPlayingMovie": "Cruella"
+        },
+        {
+            "seats": [
+                {
+                    "isAvailable": true,
+                    "seatViewUrl": "./aejdgfbai9usdfgbai.jpeg",
+                    "isHandicapped": true,
+                    "position": "F5"
+                },
+                {
+                    "isAvailable": true,
+                    "seatViewUrl": "./vaisdgviasdvbi.jpeg",
+                    "isHandicapped": true,
+                    "position": "F6"
+                }
+            ],
+            "roomNumber": 12,
+            "nowPlayingMovie": "Cruella"
+        },
+        {
+            "seats": [
+                {
+                    "isAvailable": true,
+                    "seatViewUrl": "./aejdgfbai9usdfgbai.jpeg",
+                    "isHandicapped": true,
+                    "position": "F5"
+                },
+                {
+                    "isAvailable": true,
+                    "seatViewUrl": "./vaisdgviasdvbi.jpeg",
+                    "isHandicapped": true,
+                    "position": "F6"
+                }
+            ],
+            "roomNumber": 13,
+            "nowPlayingMovie": "Cruella"
+        },
+        {
+            "seats": [
+                {
+                    "isAvailable": true,
+                    "seatViewUrl": "./aejdgfbai9usdfgbai.jpeg",
+                    "isHandicapped": true,
+                    "position": "F5"
+                },
+                {
+                    "isAvailable": true,
+                    "seatViewUrl": "./vaisdgviasdvbi.jpeg",
+                    "isHandicapped": true,
+                    "position": "F6"
+                }
+            ],
+            "roomNumber": 14,
+            "nowPlayingMovie": "Cruella"
+        },
+        {
+            "seats": [
+                {
+                    "isAvailable": true,
+                    "seatViewUrl": "./aejdgfbai9usdfgbai.jpeg",
+                    "isHandicapped": true,
+                    "position": "F5"
+                },
+                {
+                    "isAvailable": true,
+                    "seatViewUrl": "./vaisdgviasdvbi.jpeg",
+                    "isHandicapped": true,
+                    "position": "F6"
+                }
+            ],
+            "roomNumber": 15,
+            "nowPlayingMovie": "Cruella"
+        },
+        {
+            "seats": [
+                {
+                    "isAvailable": true,
+                    "seatViewUrl": "./aejdgfbai9usdfgbai.jpeg",
+                    "isHandicapped": true,
+                    "position": "F5"
+                },
+                {
+                    "isAvailable": true,
+                    "seatViewUrl": "./vaisdgviasdvbi.jpeg",
+                    "isHandicapped": true,
+                    "position": "F6"
+                }
+            ],
+            "roomNumber": 16,
+            "nowPlayingMovie": "Cruella"
+        },
+        {
+            "seats": [
+                {
+                    "isAvailable": true,
+                    "seatViewUrl": "./aejdgfbai9usdfgbai.jpeg",
+                    "isHandicapped": true,
+                    "position": "F5"
+                },
+                {
+                    "isAvailable": true,
+                    "seatViewUrl": "./vaisdgviasdvbi.jpeg",
+                    "isHandicapped": true,
+                    "position": "F6"
+                }
+            ],
+            "roomNumber": 17,
+            "nowPlayingMovie": "Cruella"
+        },
+        {
+            "seats": [
+                {
+                    "isAvailable": true,
+                    "seatViewUrl": "./aejdgfbai9usdfgbai.jpeg",
+                    "isHandicapped": true,
+                    "position": "F5"
+                },
+                {
+                    "isAvailable": true,
+                    "seatViewUrl": "./vaisdgviasdvbi.jpeg",
+                    "isHandicapped": true,
+                    "position": "F6"
+                }
+            ],
+            "roomNumber": 18,
+            "nowPlayingMovie": "Cruella"
+        },
+        {
+            "seats": [
+                {
+                    "isAvailable": true,
+                    "seatViewUrl": "./aejdgfbai9usdfgbai.jpeg",
+                    "isHandicapped": true,
+                    "position": "F5"
+                },
+                {
+                    "isAvailable": true,
+                    "seatViewUrl": "./vaisdgviasdvbi.jpeg",
+                    "isHandicapped": true,
+                    "position": "F6"
+                }
+            ],
+            "roomNumber": 19,
+            "nowPlayingMovie": "Cruella"
+        },
+        {
+            "seats": [
+                {
+                    "isAvailable": true,
+                    "seatViewUrl": "./aejdgfbai9usdfgbai.jpeg",
+                    "isHandicapped": true,
+                    "position": "F5"
+                },
+                {
+                    "isAvailable": true,
+                    "seatViewUrl": "./vaisdgviasdvbi.jpeg",
+                    "isHandicapped": true,
+                    "position": "F6"
+                }
+            ],
+            "roomNumber": 20,
+            "nowPlayingMovie": "Cruella"
         }
     ],
     "hoursOfOperation": "0800,0000"
