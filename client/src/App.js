@@ -2,6 +2,7 @@ import React, {useState} from 'react';
 import MovieBrowser from './Components/MovieBrowser'
 import TicketSelection from './Components/TicketSelection'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
+import Seats from './Components/Seats';
 
 require('dotenv').config()
 
@@ -13,6 +14,7 @@ function App() {
     const [numAdults, setNumAdults] = useState(0);
     const [numChildren, setNumChildren] = useState(0);
     const [numSeniors, setNumSeniors] = useState(0);
+    const [roomNumber, setRoomNumber] = useState(null);
     const [seats, setSeats] = useState([]);
     const [total, setTotal] = useState(0.0);
 
@@ -35,6 +37,7 @@ function App() {
                             }}
                         />
                     )}/>
+                    <Route path="/seats/:roomNumber" component={Seats}/>
                 </Switch>
             </Router>
         </>
