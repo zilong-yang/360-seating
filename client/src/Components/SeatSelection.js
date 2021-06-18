@@ -8,16 +8,155 @@ class SeatSelection extends React.Component {
     render() {
         return (
             <div className="auditorium">
+
+                <ul class="seats-legend">
+                    <li>
+                        <div class="seat"></div>
+                        <span>Available</span>
+                    </li>
+                    <li>
+                        <div class="seat selected"></div>
+                        <span>Selected</span>
+                    </li>
+                    <li>
+                        <div class="seat wheel"></div>
+                        <span>Wheelchair Accessible</span>
+                    </li>
+                    <li>
+                        <div class="seat unavailable"></div>
+                        <span>Unavailable</span>
+                    </li>
+                </ul>
+
                 <div className="seat-tile-container">
-                    <div className="screen">
-                        <span className="screen-text">screen</span>
-                    </div>
+
+                    <div className="screen"></div>
+
                     <div className="seats-layout">
+                        <div className="seat-row">
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                        </div>
 
+                        <div className="seat-row">
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                        </div>
+
+                        <div className="seat-row">
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                        </div>
+
+                        <div className="seat-row">
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                        </div>
+
+                        <div className="seat-row">
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                        </div>
+
+                        <div className="seat-row">
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                        </div>
+
+                        <div className="seat-row">
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                        </div>
+
+                        <div className="seat-row">
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                        </div>
+
+                        <div className="seat-row">
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                            <div className="seat"></div>
+                        </div>
+
+                        <p className="auditori-msg">Back of Theater</p>
                     </div>
-                </div>
-                <div className="seats-legend">
-
                 </div>
 
                 <BackButton />

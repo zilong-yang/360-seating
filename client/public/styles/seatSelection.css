@@ -1,7 +1,78 @@
 .auditorium {
     margin-top: 15px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    max-width: 1140px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin-right: auto;
+    margin-left: auto;
 }
 
-.seat-tile-container {
-    position: relative;
+.seats-legend {
+    background: rgba(0, 0, 0, 0.1);
+    padding: 5px 10px;
+    border-radius: 5px;
+    color: rgba(228, 233, 237, 1);
+    list-style-type: none;
+    display: flex;
+    justify-content: space-between;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    margin-left: auto;
+    margin-right: auto;
+    padding-bottom: 25px;
+}
+
+.seats-legend li {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+  
+.screen {
+    background-color: #ffffff;
+    height: 70px;
+    width: 100%;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 5px 25px rgba(255, 255, 255, 0.6);
+  }
+
+.seat {
+    background-color: #ffffff;
+    height: 40px;
+    width: 40px;
+    margin: 10px;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+}
+  
+.seat.selected {
+    background-color: rgba(4, 144, 117, 1);
+}
+  
+.seat.wheel {
+    background-color: rgba(42, 130, 193, 1);
+}
+.seat.unavailable {
+    background-color: rgba(68, 68, 81, 1);
+}
+
+.seats-layout {
+    margin-top: 100px;
+}
+
+.seat-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.auditori-msg {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgba(68, 68, 81, 1);
+    font-size: 1.5rem;
+    text-align: center;
 }
