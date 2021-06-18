@@ -4,6 +4,7 @@ import TicketCounter from './TicketCounter';
 import MoviesDataService from '../services/Movies';
 import BackButton from "./BackButton";
 import NextButton from "./NextButton";
+import TheatersDataService from '../services/Theaters';
 
 class TicketSelection extends Component {
     constructor(props) {
@@ -14,7 +15,8 @@ class TicketSelection extends Component {
             loading: true,
             numOfChildTickets: 0,
             numOfAdultTickets: 0,
-            numOfSeniorTickets: 0
+            numOfSeniorTickets: 0,
+            roomNumber: 0,
         }
     }
 
@@ -46,7 +48,7 @@ class TicketSelection extends Component {
     async componentDidMount() {
         const movie_id = this.props.match.params.movieID
         const selected_movie = await MoviesDataService.fetchMovie(movie_id);
-        console.log(selected_movie)
+        // console.log(selected_movie)
 
         this.setState(
             {
@@ -54,12 +56,21 @@ class TicketSelection extends Component {
                 loading: false
             },
 
-            () => {
-                console.log(this.state.movie)
-            }
+            // () => {
+            //     console.log(this.state.movie_detail);
+            // }
         )
 
         this.props.setters.setMovieName(this.state.movie_detail.original_title);
+
+        TheatersDataService.getRoomByMovieName(this.state.movie_detail.original_title)
+            .then(res => {
+                // console.log(res.data);
+                let roomNumber = res.data.roomNumber;
+                this.setState({ roomNumber: roomNumber });
+                this.props.setters.setRoomNumber(roomNumber);
+
+            }).catch(e => console.log(e));
     }
 
     render() {
@@ -101,8 +112,8 @@ class TicketSelection extends Component {
                             </div>
                         </div>
 
-                        <BackButton link="/" />
-                        <NextButton />  {/* TODO: add `link` prop once next page is created */}
+                        <BackButton link={"/"} />
+                        <NextButton link={`/seats/${this.state.roomNumber}`} />
                     </>
                 }
             </div>
