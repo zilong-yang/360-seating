@@ -28,6 +28,14 @@ function App() {
                     <Route path="/tickets/:movieID" exact render={(props) => (
                         <TicketSelection
                             {...props}
+                            order={{
+                                movieName: movieName,
+                                movieTime: movieTime,
+                                numAdults: numAdults,
+                                numChildren: numChildren,
+                                numSeniors: numSeniors,
+                                roomNumber: roomNumber,
+                            }}
                             setters={{
                                 setMovieName: setMovieName,
                                 setMovieTime: setMovieTime,
