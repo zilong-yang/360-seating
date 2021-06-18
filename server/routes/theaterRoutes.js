@@ -9,4 +9,7 @@ router.route("/mapAuditoriums")
 router.route('/getAuditoriumAvailability/:roomNumber')
     .get(theaterController.getAuditoriumAvailability);
 
+router.route('/getRoomByMovieName')
+    .get(theaterController.getRoomByMovieName);
+
 module.exports = router;

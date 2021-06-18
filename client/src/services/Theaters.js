@@ -10,6 +10,10 @@ class TheatersDataService {
         return http.get(`/theater/getAuditoriumAvailability/${roomID}`)
     }
 
+    async getRoomByMovieName(movieName) {
+        return http.get(`/theater/getRoomByMovieName?name=${movieName}`)
+    }
+
 }
 
 export default new TheatersDataService();
