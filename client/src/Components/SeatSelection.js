@@ -9,25 +9,6 @@ class SeatSelection extends React.Component {
         return (
             <div className="auditorium">
 
-                <ul class="seats-legend">
-                    <li>
-                        <div class="seat"></div>
-                        <span>Available</span>
-                    </li>
-                    <li>
-                        <div class="seat selected"></div>
-                        <span>Selected</span>
-                    </li>
-                    <li>
-                        <div class="seat wheel"></div>
-                        <span>Wheelchair Accessible</span>
-                    </li>
-                    <li>
-                        <div class="seat unavailable"></div>
-                        <span>Unavailable</span>
-                    </li>
-                </ul>
-
                 <div className="seat-tile-container">
 
                     <div className="screen"></div>
@@ -156,6 +137,25 @@ class SeatSelection extends React.Component {
                         </div>
 
                         <p className="auditori-msg">Back of Theater</p>
+                        
+                        <ul class="seats-legend">
+                            <li>
+                                <div class="seat"></div>
+                                <span>Available</span>
+                            </li>
+                            <li>
+                                <div class="seat selected"></div>
+                                <span>Selected</span>
+                            </li>
+                            <li>
+                                <div class="seat wheel"></div>
+                                <span>Wheelchair Accessible</span>
+                            </li>
+                            <li>
+                                <div class="seat unavailable"></div>
+                                <span>Unavailable</span>
+                            </li>
+                        </ul>
                     </div>
                 </div>
 
