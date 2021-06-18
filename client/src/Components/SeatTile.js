@@ -1,6 +1,6 @@
 import React from 'react';
 
-class SeatTile extends React {
+class SeatTile extends React.Component {
     render() {
         return (
             <div className="seatTile">
