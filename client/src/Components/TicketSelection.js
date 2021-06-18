@@ -87,7 +87,7 @@ class TicketSelection extends Component {
                                     resetFunc={this.handleReset}
                                     incrementFunc={this.handleIncrement}
                                     name={"numOfChildTickets"}
-                                    ticketCount={this.state.numOfChildTickets}
+                                    ticketCount={this.props.order.numChildren}
                                     ticketType={"Child"}
                                     setter={this.props.setters.setNumChildren}
                                 />
@@ -96,7 +96,7 @@ class TicketSelection extends Component {
                                     resetFunc={this.handleReset}
                                     incrementFunc={this.handleIncrement}
                                     name={"numOfAdultTickets"}
-                                    ticketCount={this.state.numOfAdultTickets}
+                                    ticketCount={this.props.order.numAdults}
                                     ticketType={"Adult"}
                                     setter={this.props.setters.setNumAdults}
                                 />
@@ -105,7 +105,7 @@ class TicketSelection extends Component {
                                     resetFunc={this.handleReset}
                                     incrementFunc={this.handleIncrement}
                                     name={"numOfSeniorTickets"}
-                                    ticketCount={this.state.numOfSeniorTickets}
+                                    ticketCount={this.props.order.numSeniors}
                                     ticketType={"Senior"}
                                     setter={this.props.setters.setNumSeniors}
                                 />

@@ -44,8 +44,7 @@ exports.getAuditoriumAvailability = async (req, res) => {
         });
 
         res.status(200).json({
-            "room": room,
-            "rooms": theater.rooms,
+            "room": room
         })
     } catch (e) {
         console.log(e);
