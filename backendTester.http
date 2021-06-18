@@ -1,0 +1,10 @@
+GET http://localhost:5000/theater/mapAuditoriums
+
+###
+
+GET http://localhost:5000/users/login
+
+###
+
+GET http://localhost:5000/theater/getAuditoriumAvailability/16
+

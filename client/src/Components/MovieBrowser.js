@@ -17,18 +17,11 @@ class MovieBrowser extends React.Component {
     // Performing API Call
     async componentDidMount() {
         const movies = await MoviesDataService.fetchNowPlaying();
-        console.log(movies)
 
-        this.setState(
-            {
-                movies: this.state.movies.concat(movies.results),
-                loading: false
-            },
-
-            () => {
-                console.log(this.state.movies)
-            }
-        )
+        this.setState({
+            movies: this.state.movies.concat(movies.results),
+            loading: false
+        })
 
         // map movies to different auditoriums (rooms)
         TheatersDataService.mapAuditoriums()
