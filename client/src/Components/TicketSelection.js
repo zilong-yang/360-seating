@@ -112,7 +112,7 @@ class TicketSelection extends Component {
                             </div>
                         </div>
 
-                        <BackButton link={"/"} />
+                        <BackButton />
                         <NextButton link={`/seats/${this.state.roomNumber}`} />
                     </>
                 }

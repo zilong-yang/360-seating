@@ -10,11 +10,15 @@ function BackButton(props) {
         history.push(props.link);
     }
 
+    const goBack = () => {
+        history.goBack();
+    }
+
     return (
         <div className="nav-button-container back-button-container">
             <i
                 className="fas fa-arrow-circle-left fa-3x nav-button back-button"
-                onClick={changeRoute}
+                onClick={props.link ? changeRoute : goBack}
             >
             </i>
         </div>

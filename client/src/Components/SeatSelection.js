@@ -1,5 +1,7 @@
 import React from 'react';
 import SeatTile from './SeatTile'
+import BackButton from "./BackButton";
+import NextButton from "./NextButton";
 
 class SeatSelection extends React.Component {
 
@@ -17,6 +19,9 @@ class SeatSelection extends React.Component {
                 <div className="seats-legend">
 
                 </div>
+
+                <BackButton />
+                <NextButton />
             </div>
         )
     }
