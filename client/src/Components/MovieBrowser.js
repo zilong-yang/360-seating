@@ -1,6 +1,7 @@
 import React from 'react';
 import MovieTile from './MovieTile';
 import MoviesDataService from '../services/Movies'
+import TheatersDataService from "../services/Theaters";
 
 class MovieBrowser extends React.Component {
     constructor(props) {
@@ -21,6 +22,13 @@ class MovieBrowser extends React.Component {
             movies: this.state.movies.concat(movies.results),
             loading: false
         })
+
+        // map movies to different auditoriums (rooms)
+        TheatersDataService.mapAuditoriums()
+            .then(res => {
+                console.log(res.data.msg);
+            })
+            .catch(e => console.log("Unable to map auditoriums\n" + e));
     }
 
     render() {

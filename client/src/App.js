@@ -2,7 +2,7 @@ import React, {useState} from 'react';
 import MovieBrowser from './Components/MovieBrowser'
 import TicketSelection from './Components/TicketSelection'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
-import Seats from './Components/Seats';
+import SeatSelection from "./Components/SeatSelection";
 
 require('dotenv').config()
 
@@ -34,10 +34,26 @@ function App() {
                                 setNumAdults: setNumAdults,
                                 setNumChildren: setNumChildren,
                                 setNumSeniors: setNumSeniors,
+                                setRoomNumber: setRoomNumber,
                             }}
                         />
                     )}/>
-                    <Route path="/seats/:roomNumber" component={Seats}/>
+                    <Route path="/seats/:roomNumber" render={(props) => (
+                        <SeatSelection
+                            {...props}
+                            order={{
+                                movieName: movieName,
+                                movieTime: movieTime,
+                                numAdults: numAdults,
+                                numChildren: numChildren,
+                                numSeniors: numSeniors,
+                                roomNumber: roomNumber,
+                            }}
+                            setters={{
+                                setSeats: setSeats,
+                            }}
+                        />
+                    )}/>
                 </Switch>
             </Router>
         </>

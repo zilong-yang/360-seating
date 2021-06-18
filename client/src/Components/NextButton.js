@@ -6,7 +6,9 @@ function NextButton(props) {
     const history = useHistory();
 
     const changeRoute = () => {
-        history.push(props.link);
+        if (props.link) {
+            history.push(props.link);
+        }
     }
 
     return (

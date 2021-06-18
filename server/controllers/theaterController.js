@@ -34,15 +34,39 @@ exports.mapAuditoriums = async (req, res) => {
 }
 
 exports.getAuditoriumAvailability = async (req, res) => {
-    const roomNumber = req.params.roomNumber;
+    const roomNumber = (Number) (req.params.roomNumber);
 
-    const theater = await Theater.findOne().lean();
+    try {
+        const theater = await Theater.findOne().lean();
 
-    const room = theater.rooms.find(room => {
-        return room.roomNumber == roomNumber;
-    });
+        const room = theater.rooms.find(room => {
+            return room.roomNumber === roomNumber;
+        });
 
-    res.json({
-        "room": room
-    })
+        res.status(200).json({
+            "room": room,
+            "rooms": theater.rooms,
+        })
+    } catch (e) {
+        console.log(e);
+    }
+}
+
+exports.getRoomByMovieName = async (req, res) => {
+    const movieName = req.query.name;
+
+    try {
+        const theater = await Theater.findOne().lean();
+
+        const room = theater.rooms.find(room => room.nowPlayingMovie === movieName);
+
+        if (room) {
+            res.status(200).json(room);
+        } else {
+            res.status(404).json({error: "Movie not found"});
+        }
+    } catch (e) {
+        console.log(e);
+        res.status(500).json({error: e});
+    }
 }
