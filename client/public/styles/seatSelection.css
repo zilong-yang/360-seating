@@ -43,6 +43,11 @@
     background-color: rgba(68, 68, 81, 1);
 }
 
+.seat:hover {
+    background-color: rgba(4, 144, 117, 0.7);
+    cursor: pointer;
+}
+
 .layout {
     margin-top: 100px;
 }
