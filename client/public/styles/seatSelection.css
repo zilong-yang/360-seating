@@ -36,7 +36,7 @@
     background-color: rgba(4, 144, 117, 1);
 }
   
-.seat.wheel {
+.seat.handicapped {
     background-color: rgba(42, 130, 193, 1);
 }
 .seat.unavailable {
@@ -44,7 +44,7 @@
 }
 
 .seat:hover {
-    background-color: rgba(4, 144, 117, 0.7);
+    background-color: rgba(4, 144, 117, 0.9);
     cursor: pointer;
 }
 
@@ -91,4 +91,5 @@
     justify-content: center;
     margin-top: 25px;
     margin-bottom: 10px;
+    pointer-events:none;
 }
