@@ -17,13 +17,11 @@ class SeatSelection extends React.Component {
 
     updateSelectedSeats = (seatPos) => {
         if (!this.state.seats.includes(seatPos)) {
-            this.setState({
-                seats: this.state.seats.concat(seatPos)
-            });
+            this.state.seats.push(seatPos);
         } else {
             let index = this.state.seats.indexOf(seatPos);
             if (index !== -1) {
-                this.state.seats.splice(seatPos, 1);
+                this.state.seats.splice(index, 1)
             }
         }
 
