@@ -33,11 +33,19 @@ class SeatSelection extends React.Component {
 
         let seatPos = e.target.id;
 
-        if (e.currentTarget.classList.contains("seat") && !e.currentTarget.classList.contains("unavailable")) {
-            e.currentTarget.classList.toggle("selected");
+        //TODO
+        //WILL NEED TO CHANGE
+        if (e.currentTarget.classList.contains("seat") &&
+            !e.currentTarget.classList.contains("unavailable")) {
+            
+                // If a seat is available and is for handicapped
+                // change to the selected state
+                e.currentTarget.classList.toggle("handicapped");
+                e.currentTarget.classList.toggle("selected");
+                
 
             this.updateSelectedSeats(seatPos);
-        }
+        } 
     }
 
     componentDidMount() {
