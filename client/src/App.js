@@ -56,6 +56,7 @@ function App() {
                                 numChildren: numChildren,
                                 numSeniors: numSeniors,
                                 roomNumber: roomNumber,
+                                seats:seats
                             }}
                             setters={{
                                 setSeats: setSeats,
