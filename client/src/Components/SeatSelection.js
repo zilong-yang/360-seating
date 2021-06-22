@@ -33,19 +33,13 @@ class SeatSelection extends React.Component {
 
         let seatPos = e.target.id;
 
-        //TODO
-        //WILL NEED TO CHANGE
         if (e.currentTarget.classList.contains("seat") &&
             !e.currentTarget.classList.contains("unavailable")) {
-            
-                // If a seat is available and is for handicapped
-                // change to the selected state
-                e.currentTarget.classList.toggle("handicapped");
-                e.currentTarget.classList.toggle("selected");
-                
+
+            e.currentTarget.classList.toggle("selected");
 
             this.updateSelectedSeats(seatPos);
-        } 
+        }
     }
 
     componentDidMount() {
@@ -73,6 +67,19 @@ class SeatSelection extends React.Component {
             )
 
         })
+
+        function getRow(letter) {
+            let rowSeat = [];
+
+            seatMap.forEach(s => {
+                if (s.props.position.charAt(0) === letter) {
+                     rowSeat.push(s);
+                }
+            });
+
+            return rowSeat;
+        }
+
         return (
             <div className="auditorium">
                 {this.state.loading ?
@@ -83,7 +90,31 @@ class SeatSelection extends React.Component {
 
                             <div className="layout">
                                 <div className="seat-row">
-                                    {seatMap}
+                                    {getRow('A')}
+                                </div>
+                                <div className="seat-row">
+                                    {getRow('B')}
+                                </div>
+                                <div className="seat-row">
+                                    {getRow('C')}
+                                </div>
+                                <div className="seat-row">
+                                    {getRow('D')}
+                                </div>
+                                <div className="seat-row">
+                                    {getRow('E')}
+                                </div>
+                                <div className="seat-row">
+                                    {getRow('F')}
+                                </div>
+                                <div className="seat-row">
+                                    {getRow('G')}
+                                </div>
+                                <div className="seat-row">
+                                    {getRow('H')}
+                                </div>
+                                <div className="seat-row">
+                                    {getRow('I')}
                                 </div>
                             </div>
 
@@ -99,7 +130,9 @@ class SeatSelection extends React.Component {
                                     <span>Selected</span>
                                 </li>
                                 <li>
-                                    <div className="seat handicapped"></div>
+                                    <i
+                                        className="fas fa-wheelchair fa-2x handicapped">
+                                    </i>
                                     <span>Wheelchair Accessible</span>
                                 </li>
                                 <li>
