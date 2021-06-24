@@ -33,13 +33,20 @@
 }
   
 .seat.selected {
-    background-color: rgba(4, 144, 117, 1);
+    background-color: rgb(93, 231, 204);
 }
   
 .handicapped {
     color: rgba(42, 130, 193, 1);
     justify-content: center;
+    /* text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000; */
 }
+
+.fa-wheelchair g g path .fas {
+    margin-top: auto;
+    stroke: black;
+    stroke-width: 100;
+  }
 
 .seat.handicapped {
     display: flex;
@@ -51,7 +58,7 @@
 }
 
 .seat:hover {
-    background-color: rgba(4, 144, 117, 0.9);
+    background-color: rgb(93, 231, 204);    
     cursor: pointer;
 }
 
