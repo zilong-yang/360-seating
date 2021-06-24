@@ -22,8 +22,8 @@
 
 .seat {
     background-color: #ffffff;
-    height: 50px;
-    width: 50px;
+    height: 60px;
+    width: 60px;
     margin: 10px;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
@@ -41,12 +41,6 @@
     justify-content: center;
     /* text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000; */
 }
-
-.fa-wheelchair g g path .fas {
-    margin-top: auto;
-    stroke: black;
-    stroke-width: 100;
-  }
 
 .seat.handicapped {
     display: flex;
@@ -104,4 +98,8 @@
     margin-bottom: 10px;
     pointer-events:none;
     min-width: 200px;
+}
+
+.fa-wheelchair {
+    margin: auto;
 }

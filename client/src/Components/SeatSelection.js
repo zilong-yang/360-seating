@@ -55,9 +55,10 @@ class SeatSelection extends React.Component {
     }
 
     render() {
-        const seatMap = this.state.curSeat.map(seat => {
+        const seatMap = this.state.curSeat.map((seat, index) => {
             return (
                 <SeatTile
+                    key={index}
                     isAvailable={seat.isAvailable}
                     isHandicapped={seat.isHandicapped}
                     position={seat.position}
