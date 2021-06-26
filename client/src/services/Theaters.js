@@ -18,6 +18,10 @@ class TheatersDataService {
         return http.get(`/theater/getAuditoriumAvailability/${roomNumber}`)
     }
 
+    async setSeatAvailability(roomID, position) {
+        return http.put(`/theater/seats/${roomID}`, {position: position});
+    }
+
 }
 
 export default new TheatersDataService();
