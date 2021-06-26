@@ -2,6 +2,7 @@ const express = require('express');
 const mongoose = require('mongoose');
 const morgan = require('morgan');
 const cors = require('cors');
+const bodyParser = require('body-parser');
 
 const app = express();
 require('dotenv').config();
@@ -20,6 +21,9 @@ app.use(morgan('dev'));
 
 // CORS Config
 app.use(cors({origin: 'http://localhost:3000', credentials: true}));
+
+// body-parser: parser application/json
+app.use(bodyParser.json());
 
 // Connect to MongoDB database
 const db_uri = process.env.DB_URI;
