@@ -43,7 +43,7 @@ class SeatSelection extends React.Component {
     }
 
     componentDidMount() {
-        TheatersDataService.getSeatAvailablity(this.props.match.params.roomNumber)
+        TheatersDataService.getAuditoriumAvailability(this.props.order.roomNumber)
             .then(res => {
                 this.setState({
                     loading: false,
