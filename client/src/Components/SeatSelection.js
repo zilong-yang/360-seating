@@ -11,34 +11,43 @@ class SeatSelection extends React.Component {
         this.state = {
             loading: true,
             curSeat: [],
-            seats: []
+            seatPos: [],
+            seatImg: []
         }
     }
 
-    updateSelectedSeats = (seatPos) => {
-        if (!this.state.seats.includes(seatPos)) {
-            this.state.seats.push(seatPos);
+    updateSelectedSeats = (seatPos, seatImg) => {
+        if (!this.state.seatPos.includes(seatPos)) {
+            this.state.seatPos.push(seatPos);
+            this.state.seatImg.push(seatImg);
         } else {
-            let index = this.state.seats.indexOf(seatPos);
-            if (index !== -1) {
-                this.state.seats.splice(index, 1)
+            let idxPos = this.state.seatPos.indexOf(seatPos);
+            if (idxPos !== -1) {
+                this.state.seatPos.splice(idxPos, 1);
+            }
+
+            let idxImg = this.state.seatImg.indexOf(seatImg);
+            if(idxImg !== -1) {
+                this.state.seatImg.splice(idxImg, 1);
             }
         }
 
-        console.log(this.state.seats)
+        console.log(this.state.seatPos);
+        console.log(this.state.seatImg);
     }
 
     handleSelectedSeat = (e) => {
         e.preventDefault();
-
-        let seatPos = e.target.id;
+        
+        let seatPos = e.currentTarget.getAttribute("data-pos");
+        let seatImg = e.currentTarget.getAttribute("data-img");
 
         if (e.currentTarget.classList.contains("seat") &&
             !e.currentTarget.classList.contains("unavailable")) {
 
             e.currentTarget.classList.toggle("selected");
 
-            this.updateSelectedSeats(seatPos);
+            this.updateSelectedSeats(seatPos, seatImg);
         }
     }
 
@@ -62,6 +71,7 @@ class SeatSelection extends React.Component {
                     isAvailable={seat.isAvailable}
                     isHandicapped={seat.isHandicapped}
                     position={seat.position}
+                    seatImg={seat.seatViewUrl}
                     selectFunc={this.handleSelectedSeat}
                     setter={this.props.setters.setSeats}
                 />
