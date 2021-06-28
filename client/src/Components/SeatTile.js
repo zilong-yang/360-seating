@@ -28,6 +28,8 @@ class SeatTile extends React.Component {
     }
 
     render() {
+        const isHandi = this.props.isHandicapped === true;
+
         return (
             <div className="seatTile">
                 <div
@@ -35,6 +37,7 @@ class SeatTile extends React.Component {
                     onClick={this.handleSelectedSeat}
                     id={this.props.position}
                 >
+                    {isHandi ? (<i className="fas fa-wheelchair fa-2x handicapped" id={this.props.position}></i>) : (<></>)}
                 </div>
             </div>
         )

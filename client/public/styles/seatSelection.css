@@ -22,8 +22,8 @@
 
 .seat {
     background-color: #ffffff;
-    height: 40px;
-    width: 40px;
+    height: 50px;
+    width: 50px;
     margin: 10px;
     border-top-left-radius: 15px;
     border-top-right-radius: 15px;
@@ -33,18 +33,26 @@
 }
   
 .seat.selected {
-    background-color: rgba(4, 144, 117, 1);
+    background-color: rgb(93, 231, 204);
 }
   
-.seat.handicapped {
-    background-color: rgba(42, 130, 193, 1);
+.handicapped {
+    color: rgba(42, 130, 193, 1);
+    justify-content: center;
+    /* text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000; */
 }
+
+.seat.handicapped {
+    display: flex;
+}
+
 .seat.unavailable {
     background-color: rgba(68, 68, 81, 1);
+    pointer-events:none;
 }
 
 .seat:hover {
-    background-color: rgba(4, 144, 117, 0.9);
+    background-color: rgb(93, 231, 204);    
     cursor: pointer;
 }
 
@@ -80,9 +88,6 @@
     display: flex;
     justify-content: space-between;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    margin-left: auto;
-    margin-right: auto;
-    padding-bottom: 25px;
 }
 
 .seats-legend li {
@@ -92,4 +97,9 @@
     margin-top: 25px;
     margin-bottom: 10px;
     pointer-events:none;
+    min-width: 200px;
+}
+
+.fa-wheelchair {
+    margin: auto;
 }
