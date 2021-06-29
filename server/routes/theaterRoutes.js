@@ -12,4 +12,8 @@ router.route('/getAuditoriumAvailability/:roomNumber')
 router.route('/getRoomByMovieName')
     .get(theaterController.getRoomByMovieName);
 
+router.route("/seats/:roomID")
+    .get(theaterController.getSeats)
+    .put(theaterController.setSeatAvailability)
+
 module.exports = router;
