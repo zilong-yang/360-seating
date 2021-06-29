@@ -1,5 +1,7 @@
 const fetch = require('node-fetch');
 const Theater = require('../models/Theater');
+const mongodb = require('mongodb');
+const ObjectId = mongodb.ObjectId;
 
 exports.mapAuditoriums = async (req, res) => {
     const API_KEY = process.env.TMDB_API_KEY;
@@ -66,6 +68,42 @@ exports.getRoomByMovieName = async (req, res) => {
         }
     } catch (e) {
         console.log(e);
+        res.status(500).json({error: e});
+    }
+}
+
+exports.getSeats = async (req, res) => {
+    res.status(404).json({error: "not implemented"});
+}
+
+exports.setSeatAvailability = async (req, res) => {
+    try {
+        const roomID = parseInt(req.params.roomID);
+        const pos = req.body.position;
+
+        const theater = await Theater.findOne();
+        let auditorium = theater.rooms.find(room => room.roomNumber === roomID);
+        let seat = auditorium.seats.find(seat => seat.position === pos);
+        theater.rooms
+            .find(room => room.roomNumber === roomID)
+            .seats
+            .find(seat => seat.position === pos).isAvailable = !seat.isAvailable;
+
+        const updateRes = await Theater.updateOne(
+            { _id: ObjectId(theater._id) },
+            { $set: { rooms: theater.rooms } }
+        )
+
+        res.status(200).json({
+            room_id: roomID,
+            position: seat.position,
+            isAvailable: seat.isAvailable,
+            auditorium: auditorium,
+            theater: theater.name,
+            res: updateRes,
+        });
+    } catch (e) {
+        console.error(e);
         res.status(500).json({error: e});
     }
 }
