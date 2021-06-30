@@ -52,12 +52,6 @@
     /* text-shadow: -1px 0 #000, 0 1px #000, 1px 0 #000, 0 -1px #000; */
 }
 
-.fa-wheelchair g g path .fas {
-    margin-top: auto;
-    stroke: black;
-    stroke-width: 100;
-  }
-
 .seat.handicapped {
     display: flex;
 }
@@ -115,6 +109,7 @@
     pointer-events:none;
     min-width: 200px;
 }
+
 .fa-wheelchair {
     margin: auto;
 }

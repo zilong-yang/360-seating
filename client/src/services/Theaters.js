@@ -14,8 +14,21 @@ class TheatersDataService {
         return http.get(`/theater/getRoomByMovieName?name=${movieName}`)
     }
 
-    async getSeatAvailablity(roomNumber) {
-        return http.get(`/theater/getAuditoriumAvailability/${roomNumber}`)
+    /**
+     * Invert the availability of the given seat in the given room.
+     *
+     * Sample usage:
+     * {@code
+     *      TheatersDataService.setSeatAvailability(1, "F5")
+     *          .then(...)
+     *          .catch(...);
+     * }
+     *
+     * @param roomID    (Number) the room number
+     * @param position  (String) position of seat
+     */
+    async setSeatAvailability(roomID, position) {
+        return http.put(`/theater/seats/${roomID}`, {position: position});
     }
 
 }
