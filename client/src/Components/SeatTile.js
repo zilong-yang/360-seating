@@ -1,4 +1,5 @@
 import React from 'react';
+import SeatMenu from './SeatMenu';
 
 class SeatTile extends React.Component {
     constructor(props, context) {
@@ -6,11 +7,16 @@ class SeatTile extends React.Component {
 
         this.handleSelectedSeat = this.handleSelectedSeat.bind(this);
         this.setClassName = this.setClassName(this);
+
+        this.state = {
+            isMenuOpen: false
+        }
     }
 
     handleSelectedSeat(e) {
         let n = this.props.selectFunc(e);
         this.props.setter(n);
+        this.handleOpenSeatMenu();
     }
 
     setClassName() {
@@ -27,20 +33,30 @@ class SeatTile extends React.Component {
         return names;
     }
 
+    handleOpenSeatMenu = () => {
+        this.setState({
+            isMenuOpen: !this.state.isMenuOpen
+        })
+    }
+
     render() {
         const isHandi = this.props.isHandicapped === true;
 
         return (
-            <div className="seatTile">
-                <div
-                    className={this.setClassName}
-                    onClick={this.handleSelectedSeat}
-                    data-pos={this.props.position}
-                    data-img={this.props.seatImg}
-                >
-                    {isHandi ? (<i className="fas fa-wheelchair fa-2x handicapped" id={this.props.position}></i>) : (<></>)}
+            <>
+                <div className="seatTile">
+                    <div
+                        className={this.setClassName}
+                        onClick={this.handleSelectedSeat}
+                        data-pos={this.props.position}
+                        data-img={this.props.seatImg}
+                    >
+                        <p className="seatPosition">{this.props.position}</p>
+                        {isHandi ? (<i className="fas fa-wheelchair fa-2x handicapped" id={this.props.position}></i>) : (<></>)}
+                    </div>
                 </div>
-            </div>
+                {this.state.isMenuOpen ? <SeatMenu seatPosition={this.props.position} seatViewUrl={this.props.seatImg} /> : <></>}
+            </>
         )
     }
 }

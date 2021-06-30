@@ -64,13 +64,11 @@ class SeatSelection extends React.Component {
     }
 
     componentDidMount() {
-        TheatersDataService.getAuditoriumAvailability(this.props.order.roomNumber)
+        TheatersDataService.getAuditoriumAvailability(this.props.match.params.roomNumber)
             .then(res => {
                 this.setState({
                     loading: false,
                     curSeat: res.data.room.seats
-                }, () => {
-                    console.log(this.state.curSeat)
                 })
             }).catch(e => console.log(e.target.id));
     }
