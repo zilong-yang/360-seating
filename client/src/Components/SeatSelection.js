@@ -18,40 +18,36 @@ class SeatSelection extends React.Component {
 
     updateSelectedSeats = (seatPos, seatImg) => {
         if (!this.state.seatPos.includes(seatPos)) {
-            let newSeatPos = this.state.seatPos.concat(seatPos);
-            let newSeatImg = this.state.seatImg.concat(seatImg);
-
             this.setState({
-                seatPos: newSeatPos,
-                seatImg: newSeatImg
+                seatPos: [...this.state.seatPos, seatPos],
+                seatImg: [...this.state.seatImg, seatImg]
             });
         } else {
-            let idxPos = this.state.seatPos.indexOf(seatPos);
+            let newSeatPos = [...this.state.seatPos];
+            let idxPos = newSeatPos.indexOf(seatPos);
             if (idxPos !== -1) {
-                let newSeatPos = this.state.seatPos.splice(idxPos, 1);
+                newSeatPos.splice(idxPos, 1);
 
                 this.setState({
                     seatPos: newSeatPos
                 });
             }
 
-            let idxImg = this.state.seatImg.indexOf(seatImg);
-            if(idxImg !== -1) {
-                let newSeatImg = this.state.seatImg.splice(idxImg, 1);
+            let newSeatImg = [...this.state.seatImg];
+            let idxImg = newSeatImg.indexOf(seatImg);
+            if (idxImg !== -1) {
+                newSeatImg.splice(idxImg, 1);
 
                 this.setState({
                     seatImg: newSeatImg
                 });
             }
         }
-
-        console.log(this.state.seatPos);
-        console.log(this.state.seatImg);
     }
 
     handleSelectedSeat = (e) => {
         e.preventDefault();
-        
+
         let seatPos = e.currentTarget.getAttribute("data-pos");
         let seatImg = e.currentTarget.getAttribute("data-img");
 
@@ -62,6 +58,9 @@ class SeatSelection extends React.Component {
 
             this.updateSelectedSeats(seatPos, seatImg);
         }
+
+        console.log(this.state.seatPos);
+        console.log(this.state.seatImg);
     }
 
     componentDidMount() {
@@ -97,7 +96,7 @@ class SeatSelection extends React.Component {
 
             seatMap.forEach(s => {
                 if (s.props.position.charAt(0) === letter) {
-                     rowSeat.push(s);
+                    rowSeat.push(s);
                 }
             });
 
