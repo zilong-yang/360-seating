@@ -35,7 +35,8 @@ class SeatTile extends React.Component {
                 <div
                     className={this.setClassName}
                     onClick={this.handleSelectedSeat}
-                    id={this.props.position}
+                    data-pos={this.props.position}
+                    data-img={this.props.seatImg}
                 >
                     {isHandi ? (<i className="fas fa-wheelchair fa-2x handicapped" id={this.props.position}></i>) : (<></>)}
                 </div>
