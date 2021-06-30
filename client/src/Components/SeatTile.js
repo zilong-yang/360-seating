@@ -1,4 +1,5 @@
 import React from 'react';
+import SeatMenu from './SeatMenu';
 
 class SeatTile extends React.Component {
     constructor(props, context) {
@@ -25,6 +26,10 @@ class SeatTile extends React.Component {
         }
 
         return names;
+    }
+
+    handleOpenSeatMenu = () => {
+        
     }
 
     render() {
