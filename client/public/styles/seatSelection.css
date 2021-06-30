@@ -113,3 +113,41 @@
 .fa-wheelchair {
     margin: auto;
 }
+
+.seatMenuWrapper {
+    position: absolute;
+    height: 150px;
+    width: 200px;
+    border: 1px solid black;
+    background: rgb(255, 255, 255);
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    z-index: 99;
+    top: 95%;  
+    left: 50%; 
+    transform: translate(-50%, -50%);
+}
+
+.seatMenuTitle{
+    border: 1px solid black;
+    background: rgb(69, 190, 235);
+    width: 100%;
+}
+.seatMenuTitle > p {
+    margin: 0;
+}
+
+.lookAroundText{
+    margin: 5px 0px;
+    color: black;
+}
+
+.fa-eye{
+    margin: auto;
+    font-size: 5rem;
+    color: black;
+    cursor: pointer;
+}

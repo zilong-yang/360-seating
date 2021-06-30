@@ -2,6 +2,10 @@ import React, { Component } from 'react';
 
 class SeatMenu extends Component {
 
+    handleOpenViewer = () => {
+        
+    }
+
     render() {
         return (
             <div className="seatMenuWrapper">
@@ -9,7 +13,8 @@ class SeatMenu extends Component {
                     <p>{this.props.seatPosition}</p>
                 </div>
                 <div className="seatMenuButtons">
-                    <i class="far fa-eye"></i>
+                    <i onClick={this.handleOpenViewer} class="far fa-eye"></i>
+                    <p className="lookAroundText">Look Around!</p>
                 </div>
             </div>
         );
