@@ -21,6 +21,7 @@
   }
 
 .seat {
+    position: relative;
     background-color: #ffffff;
     height: 50px;
     width: 50px;
@@ -36,6 +37,15 @@
     background-color: rgb(93, 231, 204);
 }
   
+.seatPosition{
+    color: black;
+    position: absolute;
+    top: 12%;  
+    left: 50%; 
+    transform: translate(-50%, -50%);
+    font-weight: 500;
+}
+
 .handicapped {
     color: rgba(42, 130, 193, 1);
     justify-content: center;
@@ -104,4 +114,7 @@
     margin-bottom: 10px;
     pointer-events:none;
     min-width: 200px;
+}
+.fa-wheelchair {
+    margin: auto;
 }

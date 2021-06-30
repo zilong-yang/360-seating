@@ -48,16 +48,15 @@ class SeatSelection extends React.Component {
                 this.setState({
                     loading: false,
                     curSeat: res.data.room.seats
-                }, () => {
-                    console.log(this.state.curSeat)
                 })
             }).catch(e => console.log(e.target.id));
     }
 
     render() {
-        const seatMap = this.state.curSeat.map(seat => {
+        const seatMap = this.state.curSeat.map((seat, index) => {
             return (
                 <SeatTile
+                    key={index}
                     isAvailable={seat.isAvailable}
                     isHandicapped={seat.isHandicapped}
                     position={seat.position}
