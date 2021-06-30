@@ -11,35 +11,56 @@ class SeatSelection extends React.Component {
         this.state = {
             loading: true,
             curSeat: [],
-            seats: []
+            seatPos: [],
+            seatImg: []
         }
     }
 
-    updateSelectedSeats = (seatPos) => {
-        if (!this.state.seats.includes(seatPos)) {
-            this.state.seats.push(seatPos);
+    updateSelectedSeats = (seatPos, seatImg) => {
+        if (!this.state.seatPos.includes(seatPos)) {
+            this.setState({
+                seatPos: [...this.state.seatPos, seatPos],
+                seatImg: [...this.state.seatImg, seatImg]
+            });
         } else {
-            let index = this.state.seats.indexOf(seatPos);
-            if (index !== -1) {
-                this.state.seats.splice(index, 1)
+            let newSeatPos = [...this.state.seatPos];
+            let idxPos = newSeatPos.indexOf(seatPos);
+            if (idxPos !== -1) {
+                newSeatPos.splice(idxPos, 1);
+
+                this.setState({
+                    seatPos: newSeatPos
+                });
+            }
+
+            let newSeatImg = [...this.state.seatImg];
+            let idxImg = newSeatImg.indexOf(seatImg);
+            if (idxImg !== -1) {
+                newSeatImg.splice(idxImg, 1);
+
+                this.setState({
+                    seatImg: newSeatImg
+                });
             }
         }
-
-        console.log(this.state.seats)
     }
 
     handleSelectedSeat = (e) => {
         e.preventDefault();
 
-        let seatPos = e.target.id;
+        let seatPos = e.currentTarget.getAttribute("data-pos");
+        let seatImg = e.currentTarget.getAttribute("data-img");
 
         if (e.currentTarget.classList.contains("seat") &&
             !e.currentTarget.classList.contains("unavailable")) {
 
             e.currentTarget.classList.toggle("selected");
 
-            this.updateSelectedSeats(seatPos);
+            this.updateSelectedSeats(seatPos, seatImg);
         }
+
+        console.log(this.state.seatPos);
+        console.log(this.state.seatImg);
     }
 
     componentDidMount() {
@@ -60,6 +81,7 @@ class SeatSelection extends React.Component {
                     isAvailable={seat.isAvailable}
                     isHandicapped={seat.isHandicapped}
                     position={seat.position}
+                    seatImg={seat.seatViewUrl}
                     selectFunc={this.handleSelectedSeat}
                     setter={this.props.setters.setSeats}
                 />
@@ -72,7 +94,7 @@ class SeatSelection extends React.Component {
 
             seatMap.forEach(s => {
                 if (s.props.position.charAt(0) === letter) {
-                     rowSeat.push(s);
+                    rowSeat.push(s);
                 }
             });
 

@@ -18,7 +18,7 @@
     margin-left: auto;
     margin-right: auto;
     box-shadow: 0 5px 25px rgba(255, 255, 255, 0.6);
-  }
+}
 
 .seat {
     position: relative;
@@ -32,11 +32,11 @@
     border-bottom-right-radius: 5px;
     text-align: center;
 }
-  
+
 .seat.selected {
     background-color: rgb(93, 231, 204);
 }
-  
+
 .seatPosition{
     color: black;
     position: absolute;
@@ -58,11 +58,11 @@
 
 .seat.unavailable {
     background-color: rgba(68, 68, 81, 1);
-    pointer-events:none;
+    pointer-events: none;
 }
 
 .seat:hover {
-    background-color: rgb(93, 231, 204);    
+    background-color: rgb(93, 231, 204);
     cursor: pointer;
 }
 
@@ -106,7 +106,7 @@
     justify-content: center;
     margin-top: 25px;
     margin-bottom: 10px;
-    pointer-events:none;
+    pointer-events: none;
     min-width: 200px;
 }
 
