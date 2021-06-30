@@ -24,7 +24,7 @@ class SeatSelection extends React.Component {
             this.setState({
                 seatPos: newSeatPos,
                 seatImg: newSeatImg
-            })
+            });
         } else {
             let idxPos = this.state.seatPos.indexOf(seatPos);
             if (idxPos !== -1) {
@@ -32,7 +32,7 @@ class SeatSelection extends React.Component {
 
                 this.setState({
                     seatPos: newSeatPos
-                })
+                });
             }
 
             let idxImg = this.state.seatImg.indexOf(seatImg);
@@ -41,7 +41,7 @@ class SeatSelection extends React.Component {
 
                 this.setState({
                     seatImg: newSeatImg
-                })
+                });
             }
         }
 
