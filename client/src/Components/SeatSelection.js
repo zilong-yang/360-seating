@@ -18,17 +18,30 @@ class SeatSelection extends React.Component {
 
     updateSelectedSeats = (seatPos, seatImg) => {
         if (!this.state.seatPos.includes(seatPos)) {
-            this.state.seatPos.push(seatPos);
-            this.state.seatImg.push(seatImg);
+            let newSeatPos = this.state.seatPos.concat(seatPos);
+            let newSeatImg = this.state.seatImg.concat(seatImg);
+
+            this.setState({
+                seatPos: newSeatPos,
+                seatImg: newSeatImg
+            })
         } else {
             let idxPos = this.state.seatPos.indexOf(seatPos);
             if (idxPos !== -1) {
-                this.state.seatPos.splice(idxPos, 1);
+                let newSeatPos = this.state.seatPos.splice(idxPos, 1);
+
+                this.setState({
+                    seatPos: newSeatPos
+                })
             }
 
             let idxImg = this.state.seatImg.indexOf(seatImg);
             if(idxImg !== -1) {
-                this.state.seatImg.splice(idxImg, 1);
+                let newSeatImg = this.state.seatImg.splice(idxImg, 1);
+
+                this.setState({
+                    seatImg: newSeatImg
+                })
             }
         }
 
