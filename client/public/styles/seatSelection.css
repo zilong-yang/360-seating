@@ -145,9 +145,21 @@
     color: black;
 }
 
-.fa-eye{
+.viewerIcon{
     margin: auto;
     font-size: 5rem;
     color: black;
     cursor: pointer;
+}
+
+#pano {
+    position: absolute;
+    height: 800px;
+    width: 1300px;
+    border: 1px solid black;
+    background: white;
+    z-index: 98;
+    top: 50%;  
+    left: 50%; 
+    transform: translate(-50%, -50%);
 }
