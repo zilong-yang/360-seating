@@ -58,9 +58,6 @@ class SeatSelection extends React.Component {
 
             this.updateSelectedSeats(seatPos, seatImg);
         }
-
-        console.log(this.state.seatPos);
-        console.log(this.state.seatImg);
     }
 
     componentDidMount() {
