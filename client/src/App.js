@@ -3,6 +3,7 @@ import MovieBrowser from './Components/MovieBrowser'
 import TicketSelection from './Components/TicketSelection'
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 import SeatSelection from "./Components/SeatSelection";
+import OrderSummary from "./Components/OrderSummary";
 
 require('dotenv').config()
 
@@ -61,6 +62,11 @@ function App() {
                             setters={{
                                 setSeats: setSeats,
                             }}
+                        />
+                    )}/>
+                    <Route path="/order-summary" render={(props) => (
+                        <OrderSummary
+                            {...props}
                         />
                     )}/>
                 </Switch>
