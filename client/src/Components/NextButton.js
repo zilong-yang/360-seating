@@ -18,6 +18,7 @@ function NextButton(props) {
                 onClick={changeRoute}
             >
             </i>
+            <div className='name'>{props.name ? props.name : <>Next</>}</div>
         </div>
     )
 }
