@@ -67,6 +67,16 @@ function App() {
                     <Route path="/order-summary" render={(props) => (
                         <OrderSummary
                             {...props}
+                            order={{
+                                movieName: movieName,
+                                movieTime: movieTime,
+                                numAdults: numAdults,
+                                numChildren: numChildren,
+                                numSeniors: numSeniors,
+                                roomNumber: roomNumber,
+                                seats: seats,
+                                total: total,
+                            }}
                         />
                     )}/>
                 </Switch>
