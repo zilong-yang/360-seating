@@ -1,5 +1,6 @@
 import {useState, useEffect} from "react";
 import BackButton from "./BackButton";
+import NextButton from "./NextButton";
 
 const OrderSummary = (props) => {
 
@@ -23,6 +24,7 @@ const OrderSummary = (props) => {
             </div>
 
             <BackButton />
+            <NextButton name={'Confirm'} />
         </>
     )
 }
