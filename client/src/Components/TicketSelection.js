@@ -26,6 +26,7 @@ class TicketSelection extends Component {
         this.setState({
             [e.target.id]: inc
         });
+        
         return inc;
     }
 
