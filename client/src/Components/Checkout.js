@@ -87,6 +87,9 @@ class Checkout extends React.Component {
                         </div>
                         <div className="cart">
                             <h2 className="checkout-block-title">Order Total</h2>
+                            <p className="ticket-count"> 
+                                <span>Movie Title: {this.props.order.movieName}</span>
+                            </p>
                             <p className="ticket-count">
                                 <span>Children Ticket(s): {this.props.order.numChildren}</span>
 
