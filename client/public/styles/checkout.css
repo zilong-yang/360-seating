@@ -1,0 +1,86 @@
+.check-page {
+    margin-top: 15px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    width: 1140px;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.cart {
+    background-color: lightgoldenrodyellow;
+    height: 800px;
+    width: 342px;
+}
+
+.info-box {
+    width: 798px;
+    height: 800px;
+}
+
+.user-info {
+    background-color: lightblue;
+    height: 400px;
+    padding: 0 16px;
+}
+
+.cc-info {
+    background-color: lightpink;
+    height: 400px;
+    padding: 0 16px;
+}
+
+#personal {
+    background-color: rgb(119, 220, 119);
+}
+
+#name {
+    flex: 33%;
+}
+
+#credit {
+    background-color: rgb(222, 165, 164);
+}
+
+.checkout-block-title {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: #696969;
+    text-align: center;
+    font-size: 1.75rem;
+    font-weight: 500;
+}
+
+label {
+    margin-bottom: 10px;
+    display: block;
+}
+
+input[type=text] {
+    width: 95%;
+    margin: auto;
+    margin-bottom: 10px;
+    padding: 10px;
+    border: 1px solid #FFFFFF;
+    border-radius: 5px;
+}
+
+.ticket-count {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    padding: 10px;
+    color: #030303;
+}
+
+hr {
+    width: 75%;
+}
