@@ -5,9 +5,11 @@ import NextButton from "./NextButton";
 const OrderSummary = (props) => {
 
     const [order, ] = useState(props.order);
+    const [user, ] = useState(props.user);
 
     useEffect(() => {
-        console.log(order);
+        // console.log(order);
+        console.log(user);
     });
 
     return (
@@ -28,11 +30,11 @@ const OrderSummary = (props) => {
 
                     <br />
 
-                    {/*TODO: fill in with information from checkout page*/}
-                    <p>Name: {"John Doe"}</p>
-                    <p>Email: {"john.doe@gmail.com"}</p>
-                    <p>Phone: {"123-456-7890"}</p>
-                    <p>Card: {"•••• •••• •••• 1234"}</p>
+                    <p>Name: {`${user.fname} ${user.lname}`}</p>
+                    <p>Email: {`${user.email}`}</p>
+                    <p>Phone: {`${user.phone}`}</p>
+                    <p>Card: {`•••• •••• •••• ${user.ccnum ? 
+                        user.ccnum.substring(user.ccnum.length - 4) : null}`}</p>
                 </div>
             </div>
 

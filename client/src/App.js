@@ -20,6 +20,9 @@ function App() {
     const [seats, setSeats] = useState([]);
     const [total, setTotal] = useState(0.0);
 
+    // user info
+    const [user, setUser] = useState({});
+
     return (
         <>
             <Router>
@@ -79,6 +82,7 @@ function App() {
                             }}
                             setters={{
                                 setTotal: setTotal,
+                                setUser: setUser,
                             }}
                         />
                     )} />
@@ -96,6 +100,7 @@ function App() {
                                 seats: seats,
                                 total: total,
                             }}
+                            user={user}
                         />
                     )}/>
                 </Switch>

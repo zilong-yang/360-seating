@@ -25,6 +25,7 @@ class Checkout extends React.Component {
         this.setState({
             [e.target.id]: e.target.value
         });
+        this.props.setters.setUser(this.state);
     }
 
     async componentDidMount() {
