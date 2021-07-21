@@ -111,7 +111,7 @@ class Checkout extends React.Component {
                 </div>
 
                 <BackButton />
-                <NextButton link='/checkout' />
+                <NextButton link='/order-summary' />
             </>
         )
     }
