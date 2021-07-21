@@ -161,7 +161,7 @@ class SeatSelection extends React.Component {
                         </div>
 
                         <BackButton />
-                        <NextButton />
+                        <NextButton link='/checkout' />
                     </>
                 }
             </div>
