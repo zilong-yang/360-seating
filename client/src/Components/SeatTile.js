@@ -15,7 +15,6 @@ class SeatTile extends React.Component {
 
     handleSelectedSeat(e) {
         let n = this.props.selectFunc(e);
-        this.props.setter(n);
         this.handleOpenSeatMenu();
     }
 

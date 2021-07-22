@@ -17,7 +17,7 @@ function App() {
     const [numSeniors, setNumSeniors] = useState(0);
     const [roomNumber, setRoomNumber] = useState(null);
     const [seats, setSeats] = useState([]);
-    const [total, setTotal] = useState(0.0);
+    const [total, setTotal] = useState("");
 
     return (
         <>
@@ -74,7 +74,8 @@ function App() {
                                 numChildren: numChildren,
                                 numSeniors: numSeniors,
                                 roomNumber: roomNumber,
-                                seats: seats
+                                seats: seats,
+                                total: total
                             }}
                             setters={{
                                 setTotal: setTotal,

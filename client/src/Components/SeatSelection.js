@@ -16,9 +16,9 @@ class SeatSelection extends React.Component {
         }
     }
 
-    updateSelectedSeats = (seatPos, seatImg) => {
+    updateSelectedSeats = async (seatPos, seatImg) => {
         if (!this.state.seatPos.includes(seatPos)) {
-            this.setState({
+            await this.setState({
                 seatPos: [...this.state.seatPos, seatPos],
                 seatImg: [...this.state.seatImg, seatImg]
             });
@@ -28,7 +28,7 @@ class SeatSelection extends React.Component {
             if (idxPos !== -1) {
                 newSeatPos.splice(idxPos, 1);
 
-                this.setState({
+                await this.setState({
                     seatPos: newSeatPos
                 });
             }
@@ -38,11 +38,13 @@ class SeatSelection extends React.Component {
             if (idxImg !== -1) {
                 newSeatImg.splice(idxImg, 1);
 
-                this.setState({
+                await this.setState({
                     seatImg: newSeatImg
                 });
             }
         }
+        
+        this.props.setters.setSeats(this.state.seatPos);
     }
 
     handleSelectedSeat = (e) => {
@@ -56,7 +58,7 @@ class SeatSelection extends React.Component {
 
             e.currentTarget.classList.toggle("selected");
 
-            this.updateSelectedSeats(seatPos, seatImg);
+            this.updateSelectedSeats(seatPos, seatImg);            
         }
     }
 
@@ -80,7 +82,6 @@ class SeatSelection extends React.Component {
                     position={seat.position}
                     seatImg={seat.seatViewUrl}
                     selectFunc={this.handleSelectedSeat}
-                    setter={this.props.setters.setSeats}
                 />
             )
 

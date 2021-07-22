@@ -21,10 +21,12 @@ class Checkout extends React.Component {
     }
 
 
-    updateInfo = (e) => {
-        this.setState({
+    updateInfo = async (e) => {
+        await this.setState({
             [e.target.id]: e.target.value
         });
+
+        this.props.setters.setUser(this.state);
     }
 
     async componentDidMount() {
@@ -38,9 +40,11 @@ class Checkout extends React.Component {
             currency: "USD"
         });
 
-        this.setState({
+        await this.setState({
             total: numUSD.format(total)
         });
+
+        this.props.setters.setTotal(numUSD.format(total));
     }
 
     render() {
