@@ -9,7 +9,7 @@ const OrderSummary = (props) => {
 
     useEffect(() => {
         // console.log(order);
-        console.log(user);
+        // console.log(user);
     });
 
     return (
@@ -25,7 +25,7 @@ const OrderSummary = (props) => {
                     <p>Time: {order.movieTime}</p>
                     <p>Room {order.roomNumber}</p>
                     <p>{order.numAdults + order.numChildren + order.numSeniors} Tickets</p>
-                    <p>Seats: {order.seats}</p>
+                    <p>Seats: {order.seats.sort().reduce((s, seat) => s.concat(seat).concat(" "), "")}</p>
                     <p>Order Total: {order.total}</p>
 
                     <br />
