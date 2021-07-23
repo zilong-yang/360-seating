@@ -31,13 +31,16 @@ exports.addOrder = async (req, res) => {
 
         let user = req.body.user;
         let order = req.body.order;
-        let seats = (Array) (order.seats);
-        seats = seats.map((seat, i) => {
-            return {
-                position: seat
-            }
-        })
 
+        // map a array of strings to an array of objects
+        let seats = [];
+        seats = seats.concat(order.seats);
+        seats = seats.map((position) => ({position: position}));
+
+        // for currency string, remove any $ and ,
+        let total = parseFloat(order.total.replace(/[$,]+/g, ''));
+
+        // organize order details according to the Order model
         let orderDetails = {
             name: `${user.fname} ${user.lname}`,
             email: user.email,
@@ -48,7 +51,7 @@ exports.addOrder = async (req, res) => {
                 movieAuditorium: (Number) (order.roomNumber),
                 seats: seats
             }],
-            total: (Number) (order.total),
+            total: total,
         };
 
         const result = await db.collection('orders').insertOne(orderDetails);

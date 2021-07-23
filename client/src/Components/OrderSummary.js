@@ -1,6 +1,7 @@
 import {useState, useEffect} from "react";
 import BackButton from "./BackButton";
 import NextButton from "./NextButton";
+import OrdersDataService from "../services/Orders";
 
 const OrderSummary = (props) => {
 
@@ -11,6 +12,10 @@ const OrderSummary = (props) => {
         // console.log(order);
         // console.log(user);
     });
+
+    const confirmOrder = async () => {
+        await OrdersDataService.addOrder(order, user);
+    }
 
     return (
         <>
@@ -39,7 +44,7 @@ const OrderSummary = (props) => {
             </div>
 
                 <BackButton />
-                <NextButton name={'Confirm'} />
+                <NextButton name={'Confirm'} action={confirmOrder} />
         </>
     )
 }
