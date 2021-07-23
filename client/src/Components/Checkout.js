@@ -26,7 +26,8 @@ class Checkout extends React.Component {
             [e.target.id]: e.target.value
         });
 
-        this.props.setters.setUser(this.state);
+        // TODO Waiting to see if User State needs to be set
+        // this.props.setters.setUser(this.state);
     }
 
     async componentDidMount() {
@@ -51,67 +52,66 @@ class Checkout extends React.Component {
         return (
             <>
                 <div className="check-page">
-                    <div className="row">
-                        <div className="info-box">
-                            <div className="user-info">
-                                <h2 className="checkout-block-title">Personal Information</h2>
+                    <form>
+                        <div className="row">
+                            <div className="info-box">
+                                <div className="user-info">
+                                    <h2 className="checkout-block-title">Personal Information</h2>
 
-                                <label for="fname">First Name</label>
-                                <input type="text" id="fname" name="firstname" placeholder="John" onChange={this.updateInfo} />
+                                    <label for="fname">First Name</label>
+                                    <input type="text" id="fname" name="firstname" placeholder="John" onChange={this.updateInfo} required />
 
-                                <label for="lname">Last Name</label>
-                                <input type="text" id="lname" name="lastname" placeholder="Smith" onChange={this.updateInfo} />
+                                    <label for="lname">Last Name</label>
+                                    <input type="text" id="lname" name="lastname" placeholder="Smith" onChange={this.updateInfo} required />
+
+                                    <label for="email">Email</label>
+                                    <input type="text" id="email" name="email" placeholder="smithj123@email.com" onChange={this.updateInfo} required />
+
+                                    <label for="pnum">Phone Number</label>
+                                    <input type="text" id="pnum" name="phonenumber" placeholder="800555555" onChange={this.updateInfo} required />
+
+                                </div>
+                                <div className="cc-info">
+                                    <h2 className="checkout-block-title">Credit Card Information</h2>
+
+                                    <label for="ccname">Name on Credit Card</label>
+                                    <input type="text" id="ccname" name="cardname" placeholder="John Smith" onChange={this.updateInfo} required />
+
+                                    <label for="ccnum">Credit Card Number</label>
+                                    <input type="text" id="ccnum" name="cardbum" placeholder="1111-2222-3333-4444" onChange={this.updateInfo} required />
 
 
+                                    <label for="expdate">Expiration Date</label>
+                                    <input type="text" id="expdate" name="expdate" placeholder="01/21" onChange={this.updateInfo} required />
 
-                                <label for="email">Email</label>
-                                <input type="text" id="email" name="email" placeholder="smithj123@email.com" onChange={this.updateInfo} />
-
-                                <label for="pnum">Phone Number</label>
-                                <input type="text" id="pnum" name="phonenumber" placeholder="800555555" onChange={this.updateInfo} />
-
+                                    <label for="ccv">CCV</label>
+                                    <input type="text" id="ccv" name="ccv" placeholder="123" onChange={this.updateInfo} required />
+                                </div>
                             </div>
-                            <div className="cc-info">
-                                <h2 className="checkout-block-title">Credit Card Information</h2>
+                            <div className="cart">
+                                <h2 className="checkout-block-title">Order Total</h2>
+                                <p className="ticket-count">
+                                    <span>Movie Title: {this.props.order.movieName}</span>
+                                </p>
+                                <p className="ticket-count">
+                                    <span>Children Ticket(s): {this.props.order.numChildren}</span>
 
-                                <label for="ccname">Name on Credit Card</label>
-                                <input type="text" id="ccname" name="cardname" placeholder="John Smith" onChange={this.updateInfo} />
+                                </p>
+                                <p className="ticket-count">
+                                    <span>Adult Ticket(s): {this.props.order.numAdults}</span>
+                                </p>
+                                <p className="ticket-count">
+                                    <span>Senior Ticket(s): {this.props.order.numSeniors}</span>
+                                </p>
 
-                                <label for="ccnum">Credit Card Number</label>
-                                <input type="text" id="ccnum" name="cardbum" placeholder="1111-2222-3333-4444" onChange={this.updateInfo} />
-
-
-                                <label for="expdate">Expiration Date</label>
-                                <input type="text" id="expdate" name="expdate" placeholder="01/21" onChange={this.updateInfo} />
-
-                                <label for="ccv">CCV</label>
-                                <input type="text" id="ccv" name="ccv" placeholder="123" onChange={this.updateInfo} />
+                                <hr />
+                                <p className="ticket-count">
+                                    <span>Total: {this.state.total}</span>
+                                </p>
 
                             </div>
                         </div>
-                        <div className="cart">
-                            <h2 className="checkout-block-title">Order Total</h2>
-                            <p className="ticket-count"> 
-                                <span>Movie Title: {this.props.order.movieName}</span>
-                            </p>
-                            <p className="ticket-count">
-                                <span>Children Ticket(s): {this.props.order.numChildren}</span>
-
-                            </p>
-                            <p className="ticket-count">
-                                <span>Adult Ticket(s): {this.props.order.numAdults}</span>
-                            </p>
-                            <p className="ticket-count">
-                                <span>Senior Ticket(s): {this.props.order.numSeniors}</span>
-                            </p>
-
-                            <hr />
-                            <p className="ticket-count">
-                                <span>Total: {this.state.total}</span>
-                            </p>
-
-                        </div>
-                    </div>
+                    </form>
                 </div>
 
                 <BackButton />
