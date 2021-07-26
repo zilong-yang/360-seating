@@ -8,3 +8,34 @@ GET http://localhost:5000/users/login
 
 GET http://localhost:5000/theater/getAuditoriumAvailability/16
 
+###
+
+GET http://localhost:5000/orders/getOrders
+
+###
+
+POST http://localhost:5000/orders/addOrder
+Content-Type: application/json
+
+{
+  "user": {
+    "fname": "Zilong",
+    "lname": "Yang",
+    "email": "zilong.yang@yahoo.com",
+    "phone": "6175866588"
+  },
+  "order": {
+    "movieName": "Black Widow",
+    "movieTime": "1800",
+    "roomNumber": 1,
+    "seats": [
+      {
+        "position": "F1"
+      },
+      {
+        "position": "F2"
+      }
+    ],
+    "total": 30.00
+  }
+}

@@ -1,0 +1,41 @@
+.summary-container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+
+	margin: 50px auto auto;
+	border: 1px white solid;
+
+	width: 40%;
+
+	font-size: 0.8em;
+}
+
+.page-name-container {
+	display: flex;
+	flex-direction: column;
+
+	padding-top: 10px;
+	padding-bottom: 20px;
+}
+
+#page-name {
+	margin: auto;
+	font-size: 1.5em;
+}
+
+.summary {
+	margin: auto;
+	width: fit-content;
+
+	display: flex;
+	flex-direction: column;
+	justify-items: center;
+}
+
+.summary > p {
+	width: inherit;
+
+	margin: auto;
+	padding-bottom: 10px;
+}

@@ -1,10 +1,6 @@
 const mongoose = require('mongoose');
 const movieOrderDetailsSchema = require('./MovieOrderDetails').schema;
 const orderSchema = new mongoose.Schema({
-    orderID:{
-        type: Number,
-        required: true
-    },
     name:{
         type: String,
         required: true

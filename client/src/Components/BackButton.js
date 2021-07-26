@@ -21,6 +21,7 @@ function BackButton(props) {
                 onClick={props.link ? changeRoute : goBack}
             >
             </i>
+            <div className='name'>{props.name ? props.name : <>Back</>}</div>
         </div>
     )
 }

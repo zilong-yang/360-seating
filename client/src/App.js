@@ -4,6 +4,7 @@ import TicketSelection from './Components/TicketSelection'
 import Checkout from './Components/Checkout'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import SeatSelection from "./Components/SeatSelection";
+import OrderSummary from "./Components/OrderSummary";
 
 require('dotenv').config()
 
@@ -18,6 +19,9 @@ function App() {
     const [roomNumber, setRoomNumber] = useState(null);
     const [seats, setSeats] = useState([]);
     const [total, setTotal] = useState("");
+
+    // user info
+    const [user, setUser] = useState({});
 
     return (
         <>
@@ -79,9 +83,27 @@ function App() {
                             }}
                             setters={{
                                 setTotal: setTotal,
+                                setUser: setUser,
                             }}
                         />
                     )} />
+                    )}/>
+                    <Route path="/order-summary" render={(props) => (
+                        <OrderSummary
+                            {...props}
+                            order={{
+                                movieName: movieName,
+                                movieTime: movieTime,
+                                numAdults: numAdults,
+                                numChildren: numChildren,
+                                numSeniors: numSeniors,
+                                roomNumber: roomNumber,
+                                seats: seats,
+                                total: total,
+                            }}
+                            user={user}
+                        />
+                    )}/>
                 </Switch>
             </Router>
         </>

@@ -15,6 +15,7 @@ app.enable('trust proxy');
 // Get Routes
 const userRoutes = require('./routes/userRoutes');
 const theaterRoutes = require('./routes/theaterRoutes');
+const orderRoutes = require('./routes/orderRoutes');
 
 // Morgan Middleware
 app.use(morgan('dev'));
@@ -41,6 +42,7 @@ mongoose.connect(db_uri, {
 // Use Routes
 app.use("/users", userRoutes);
 app.use("/theater", theaterRoutes);
+app.use('/orders', orderRoutes);
 
 // Listen on selected port
 app.listen(port, () => {
