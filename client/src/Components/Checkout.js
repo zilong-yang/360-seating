@@ -69,6 +69,9 @@ class Checkout extends React.Component {
                                     <input type="text" id="pnum" name="phonenumber" placeholder="800555555" onChange={this.updateInfo} required />
 
                                 </div>
+
+                                <hr />
+
                                 <div className="cc-info">
                                     <h2 className="checkout-block-title">Credit Card Information</h2>
 
@@ -103,6 +106,7 @@ class Checkout extends React.Component {
                                 </p>
 
                                 <hr />
+
                                 <p className="ticket-count">
                                     <span>Total: {this.state.total}</span>
                                 </p>
