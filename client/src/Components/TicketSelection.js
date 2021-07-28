@@ -5,6 +5,7 @@ import MoviesDataService from '../services/Movies';
 import BackButton from "./BackButton";
 import NextButton from "./NextButton";
 import TheatersDataService from '../services/Theaters';
+import Backdrop from "./Backdrop";
 
 class TicketSelection extends Component {
     constructor(props) {
@@ -77,48 +78,51 @@ class TicketSelection extends Component {
 
     render() {
         return (
-            <div className="ticketSelectionContainter">
-                {this.state.loading ?
-                    <p>Loading</p> :
-                    <>
-                        <MovieDisplay movie={this.state.movie_detail} />
-                        <div className="row">
-                            <div className="ticket-container">
-                                <TicketCounter
-                                    decrementFunc={this.handleDecrement}
-                                    resetFunc={this.handleReset}
-                                    incrementFunc={this.handleIncrement}
-                                    name={"numOfChildTickets"}
-                                    ticketCount={this.props.order.numChildren}
-                                    ticketType={"Child"}
-                                    setter={this.props.setters.setNumChildren}
-                                />
-                                <TicketCounter
-                                    decrementFunc={this.handleDecrement}
-                                    resetFunc={this.handleReset}
-                                    incrementFunc={this.handleIncrement}
-                                    name={"numOfAdultTickets"}
-                                    ticketCount={this.props.order.numAdults}
-                                    ticketType={"Adult"}
-                                    setter={this.props.setters.setNumAdults}
-                                />
-                                <TicketCounter
-                                    decrementFunc={this.handleDecrement}
-                                    resetFunc={this.handleReset}
-                                    incrementFunc={this.handleIncrement}
-                                    name={"numOfSeniorTickets"}
-                                    ticketCount={this.props.order.numSeniors}
-                                    ticketType={"Senior"}
-                                    setter={this.props.setters.setNumSeniors}
-                                />
+            <>
+                <Backdrop movieID={this.props.order.movieID} />
+                <div className="ticketSelectionContainter">
+                    {this.state.loading ?
+                        <p>Loading</p> :
+                        <>
+                            <MovieDisplay movie={this.state.movie_detail} />
+                            <div className="row">
+                                <div className="ticket-container">
+                                    <TicketCounter
+                                        decrementFunc={this.handleDecrement}
+                                        resetFunc={this.handleReset}
+                                        incrementFunc={this.handleIncrement}
+                                        name={"numOfChildTickets"}
+                                        ticketCount={this.props.order.numChildren}
+                                        ticketType={"Child"}
+                                        setter={this.props.setters.setNumChildren}
+                                    />
+                                    <TicketCounter
+                                        decrementFunc={this.handleDecrement}
+                                        resetFunc={this.handleReset}
+                                        incrementFunc={this.handleIncrement}
+                                        name={"numOfAdultTickets"}
+                                        ticketCount={this.props.order.numAdults}
+                                        ticketType={"Adult"}
+                                        setter={this.props.setters.setNumAdults}
+                                    />
+                                    <TicketCounter
+                                        decrementFunc={this.handleDecrement}
+                                        resetFunc={this.handleReset}
+                                        incrementFunc={this.handleIncrement}
+                                        name={"numOfSeniorTickets"}
+                                        ticketCount={this.props.order.numSeniors}
+                                        ticketType={"Senior"}
+                                        setter={this.props.setters.setNumSeniors}
+                                    />
+                                </div>
                             </div>
-                        </div>
 
-                        <BackButton />
-                        <NextButton link={`/seats/${this.state.roomNumber}`} />
-                    </>
-                }
-            </div>
+                            <BackButton />
+                            <NextButton link={`/seats/${this.state.roomNumber}`} />
+                        </>
+                    }
+                </div>
+            </>
         );
     }
 }

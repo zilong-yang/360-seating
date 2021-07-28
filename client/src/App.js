@@ -37,6 +37,7 @@ function App() {
                         <TicketSelection
                             {...props}
                             order={{
+                                movieID: movieID,
                                 movieName: movieName,
                                 movieTime: movieTime,
                                 numAdults: numAdults,
@@ -59,6 +60,7 @@ function App() {
                         <SeatSelection
                             {...props}
                             order={{
+                                movieID: movieID,
                                 movieName: movieName,
                                 movieTime: movieTime,
                                 numAdults: numAdults,
@@ -76,6 +78,7 @@ function App() {
                         <Checkout
                             {...props}
                             order={{
+                                movieID: movieID,
                                 movieName: movieName,
                                 movieTime: movieTime,
                                 numAdults: numAdults,
@@ -96,6 +99,7 @@ function App() {
                         <OrderSummary
                             {...props}
                             order={{
+                                movieID: movieID,
                                 movieName: movieName,
                                 movieTime: movieTime,
                                 numAdults: numAdults,
@@ -108,12 +112,6 @@ function App() {
                             user={user}
                         />
                     )}/>
-                    <Route path="/backdrop" render={(props) => (
-                        <Backdrop
-                            {...props}
-                            movieID={movieID}
-                        />
-                    )} />
                 </Switch>
             </Router>
         </>

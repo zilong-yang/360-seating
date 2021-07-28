@@ -1,6 +1,7 @@
 import React from 'react';
 import BackButton from "./BackButton";
 import NextButton from "./NextButton";
+import Backdrop from "./Backdrop";
 
 class Checkout extends React.Component {
     constructor(props) {
@@ -49,6 +50,7 @@ class Checkout extends React.Component {
     render() {
         return (
             <>
+                <Backdrop movieID={this.props.order.movieID} />
                 <div className="check-page">
                     <form>
                         <div className="row">

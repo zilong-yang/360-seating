@@ -3,6 +3,7 @@ import SeatTile from './SeatTile'
 import BackButton from "./BackButton";
 import NextButton from "./NextButton";
 import TheatersDataService from '../services/Theaters';
+import Backdrop from "./Backdrop";
 
 class SeatSelection extends React.Component {
     constructor(props) {
@@ -100,72 +101,75 @@ class SeatSelection extends React.Component {
         }
 
         return (
-            <div className="auditorium">
-                {this.state.loading ?
-                    <p>Loading</p> :
-                    <>
-                        <div className="seat-tile-container">
-                            <div className="screen"></div>
+            <>
+                <Backdrop movieID={this.props.order.movieID} />
+                <div className="auditorium">
+                    {this.state.loading ?
+                        <p>Loading</p> :
+                        <>
+                            <div className="seat-tile-container">
+                                <div className="screen"></div>
 
-                            <div className="layout">
-                                <div className="seat-row">
-                                    {getRow('A')}
+                                <div className="layout">
+                                    <div className="seat-row">
+                                        {getRow('A')}
+                                    </div>
+                                    <div className="seat-row">
+                                        {getRow('B')}
+                                    </div>
+                                    <div className="seat-row">
+                                        {getRow('C')}
+                                    </div>
+                                    <div className="seat-row">
+                                        {getRow('D')}
+                                    </div>
+                                    <div className="seat-row">
+                                        {getRow('E')}
+                                    </div>
+                                    <div className="seat-row">
+                                        {getRow('F')}
+                                    </div>
+                                    <div className="seat-row">
+                                        {getRow('G')}
+                                    </div>
+                                    <div className="seat-row">
+                                        {getRow('H')}
+                                    </div>
+                                    <div className="seat-row">
+                                        {getRow('I')}
+                                    </div>
                                 </div>
-                                <div className="seat-row">
-                                    {getRow('B')}
-                                </div>
-                                <div className="seat-row">
-                                    {getRow('C')}
-                                </div>
-                                <div className="seat-row">
-                                    {getRow('D')}
-                                </div>
-                                <div className="seat-row">
-                                    {getRow('E')}
-                                </div>
-                                <div className="seat-row">
-                                    {getRow('F')}
-                                </div>
-                                <div className="seat-row">
-                                    {getRow('G')}
-                                </div>
-                                <div className="seat-row">
-                                    {getRow('H')}
-                                </div>
-                                <div className="seat-row">
-                                    {getRow('I')}
-                                </div>
+
+                                <p className="auditori-msg">Back of Theater</p>
+
+                                <ul className="seats-legend" >
+                                    <li>
+                                        <div className="seat available"></div>
+                                        <span>Available</span>
+                                    </li>
+                                    <li>
+                                        <div className="seat selected"></div>
+                                        <span>Selected</span>
+                                    </li>
+                                    <li>
+                                        <i
+                                            className="fas fa-wheelchair fa-2x handicapped">
+                                        </i>
+                                        <span>Wheelchair Accessible</span>
+                                    </li>
+                                    <li>
+                                        <div className="seat unavailable"></div>
+                                        <span>Unavailable</span>
+                                    </li>
+                                </ul>
                             </div>
 
-                            <p className="auditori-msg">Back of Theater</p>
-
-                            <ul className="seats-legend" >
-                                <li>
-                                    <div className="seat available"></div>
-                                    <span>Available</span>
-                                </li>
-                                <li>
-                                    <div className="seat selected"></div>
-                                    <span>Selected</span>
-                                </li>
-                                <li>
-                                    <i
-                                        className="fas fa-wheelchair fa-2x handicapped">
-                                    </i>
-                                    <span>Wheelchair Accessible</span>
-                                </li>
-                                <li>
-                                    <div className="seat unavailable"></div>
-                                    <span>Unavailable</span>
-                                </li>
-                            </ul>
-                        </div>
-
-                        <BackButton />
-                        <NextButton link='/checkout' />
-                    </>
-                }
-            </div>
+                            <BackButton />
+                            <NextButton link='/checkout' />
+                        </>
+                    }
+                </div>
+            </>
         )
     }
 }
