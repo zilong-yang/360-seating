@@ -1,0 +1,14 @@
+.movie-poster-container {
+	display: flex;
+	justify-content: center;
+
+}
+
+#movie-poster {
+	width: 100%;
+	position: fixed;
+	top: -150px;
+	z-index: -1;
+
+	filter: blur(15px) brightness(65%);
+}
