@@ -11,7 +11,7 @@ require('dotenv').config()
 
 function App() {
 
-    const [movieID, setMovieID] = useState(-1);
+    const [movieID, setMovieID] = useState(0);
 
     // order detail
     const [movieName, setMovieName] = useState("");
