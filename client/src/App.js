@@ -5,6 +5,7 @@ import Checkout from './Components/Checkout'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import SeatSelection from "./Components/SeatSelection";
 import OrderSummary from "./Components/OrderSummary";
+import Backdrop from "./Components/Backdrop";
 
 require('dotenv').config()
 
@@ -107,6 +108,12 @@ function App() {
                             user={user}
                         />
                     )}/>
+                    <Route path="/backdrop" render={(props) => (
+                        <Backdrop
+                            {...props}
+                            movieID={movieID}
+                        />
+                    )} />
                 </Switch>
             </Router>
         </>
