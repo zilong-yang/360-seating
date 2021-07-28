@@ -47,7 +47,8 @@ class TicketSelection extends Component {
     }
 
     async componentDidMount() {
-        const movie_id = this.props.match.params.movieID
+        const movie_id = this.props.match.params.movieID;
+        this.props.setters.setMovieID(movie_id);
         const selected_movie = await MoviesDataService.fetchMovie(movie_id);
         // console.log(selected_movie)
 

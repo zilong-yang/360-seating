@@ -10,6 +10,8 @@ require('dotenv').config()
 
 function App() {
 
+    const [movieID, setMovieID] = useState(-1);
+
     // order detail
     const [movieName, setMovieName] = useState("");
     const [movieTime, setMovieTime] = useState("");
@@ -42,6 +44,7 @@ function App() {
                                 roomNumber: roomNumber,
                             }}
                             setters={{
+                                setMovieID: setMovieID,
                                 setMovieName: setMovieName,
                                 setMovieTime: setMovieTime,
                                 setNumAdults: setNumAdults,
