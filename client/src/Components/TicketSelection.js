@@ -85,7 +85,7 @@ class TicketSelection extends Component {
                         <p>Loading</p> :
                         <>
                             <MovieDisplay movie={this.state.movie_detail} />
-                            <div className="row">
+                            <div className="row-50">
                                 <div className="ticket-container">
                                     <TicketCounter
                                         decrementFunc={this.handleDecrement}
