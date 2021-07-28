@@ -11,49 +11,39 @@
     margin-left: auto;
 }
 
-.row {
+.row_CO {
     display: flex;
     flex-wrap: wrap;
+    background: rgba(0, 0, 0, 0.459);
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: rgba(228, 233, 237, 1);
 }
 
 .cart {
-    background-color: lightgoldenrodyellow;
+    margin-left: 40px;
+    width: 300px;
     height: 800px;
-    width: 342px;
 }
 
 .info-box {
-    width: 798px;
+    min-width: 600px;
     height: 800px;
 }
 
 .user-info {
-    background-color: lightblue;
     height: 400px;
     padding: 0 16px;
 }
 
 .cc-info {
-    background-color: lightpink;
     height: 400px;
     padding: 0 16px;
 }
 
-#personal {
-    background-color: rgb(119, 220, 119);
-}
-
-#name {
-    flex: 33%;
-}
-
-#credit {
-    background-color: rgb(222, 165, 164);
-}
-
 .checkout-block-title {
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    color: #696969;
+    color: rgba(228, 233, 237, 1);
     text-align: center;
     font-size: 1.75rem;
     font-weight: 500;
@@ -62,6 +52,8 @@
 label {
     margin-bottom: 10px;
     display: block;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    color: rgba(228, 233, 237, 1);
 }
 
 input[type=text] {
@@ -78,7 +70,7 @@ input[type=text] {
     font-size: 1.5rem;
     font-weight: 400;
     padding: 10px;
-    color: #030303;
+    color: rgba(228, 233, 237, 1);
 }
 
 hr {
