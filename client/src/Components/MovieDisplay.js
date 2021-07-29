@@ -1,6 +1,6 @@
 import React from 'react';
 
-const imageUrl = "http://image.tmdb.org/t/p/w300/";
+const imageUrl = "http://image.tmdb.org/t/p/w500/";
 
 class MovieDisplay extends React.Component {
 
