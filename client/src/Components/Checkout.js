@@ -68,7 +68,7 @@ class Checkout extends React.Component {
                                     <input type="text" id="email" name="email" placeholder="smithj123@email.com" onChange={this.updateInfo} required />
 
                                     <label>Phone Number</label>
-                                    <input type="text" id="pnum" name="phonenumber" placeholder="800555555" onChange={this.updateInfo} required />
+                                    <input type="text" id="phone" name="phonenumber" placeholder="800555555" onChange={this.updateInfo} required />
 
                                 </div>
                                 <div className="cc-info">
