@@ -13,12 +13,14 @@ class SeatViewer extends Component {
 
         this.viewer = new Marzipano.Viewer(this.pano, viewerOptions);
 
-        const source = Marzipano.ImageUrlSource.fromString("//www.marzipano.net/media/equirect/angra.jpg");
+        const source = Marzipano.ImageUrlSource.fromString(this.props.imgPath);
+        
+        console.log(source)
 
         const geometry = new Marzipano.EquirectGeometry([{ width: 4000 }]);
 
         const limiter = Marzipano.RectilinearView.limit.traditional(1024, 100*Math.PI/180);
-        const view = new Marzipano.RectilinearView({ yaw: Math.PI }, limiter);
+        const view = new Marzipano.RectilinearView({ yaw: 0 }, limiter);
 
         const scene = this.viewer.createScene({
             source: source,
