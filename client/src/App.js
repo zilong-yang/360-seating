@@ -5,10 +5,13 @@ import Checkout from './Components/Checkout'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import SeatSelection from "./Components/SeatSelection";
 import OrderSummary from "./Components/OrderSummary";
+import Backdrop from "./Components/Backdrop";
 
 require('dotenv').config()
 
 function App() {
+
+    const [movieID, setMovieID] = useState(0);
 
     // order detail
     const [movieName, setMovieName] = useState("");
@@ -34,6 +37,7 @@ function App() {
                         <TicketSelection
                             {...props}
                             order={{
+                                movieID: movieID,
                                 movieName: movieName,
                                 movieTime: movieTime,
                                 numAdults: numAdults,
@@ -42,6 +46,7 @@ function App() {
                                 roomNumber: roomNumber,
                             }}
                             setters={{
+                                setMovieID: setMovieID,
                                 setMovieName: setMovieName,
                                 setMovieTime: setMovieTime,
                                 setNumAdults: setNumAdults,
@@ -55,6 +60,7 @@ function App() {
                         <SeatSelection
                             {...props}
                             order={{
+                                movieID: movieID,
                                 movieName: movieName,
                                 movieTime: movieTime,
                                 numAdults: numAdults,
@@ -72,6 +78,7 @@ function App() {
                         <Checkout
                             {...props}
                             order={{
+                                movieID: movieID,
                                 movieName: movieName,
                                 movieTime: movieTime,
                                 numAdults: numAdults,
@@ -92,6 +99,7 @@ function App() {
                         <OrderSummary
                             {...props}
                             order={{
+                                movieID: movieID,
                                 movieName: movieName,
                                 movieTime: movieTime,
                                 numAdults: numAdults,

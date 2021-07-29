@@ -9,6 +9,11 @@
 	width: 40%;
 
 	font-size: 0.8em;
+	
+	background: rgba(0, 0, 0, 0.459);
+    padding: 5px 10px;
+    border-radius: 10px;
+    color: rgba(228, 233, 237, 1);
 }
 
 .page-name-container {

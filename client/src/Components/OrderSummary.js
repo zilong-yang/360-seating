@@ -2,6 +2,7 @@ import {useState, useEffect} from "react";
 import BackButton from "./BackButton";
 import NextButton from "./NextButton";
 import OrdersDataService from "../services/Orders";
+import Backdrop from "./Backdrop";
 
 const OrderSummary = (props) => {
 
@@ -19,6 +20,7 @@ const OrderSummary = (props) => {
 
     return (
         <>
+            <Backdrop movieID={props.order.movieID} />
             <div className='summary-container'>
                 <div className='page-name-container'>
                     <h1 id='page-name'>Order Summary</h1>
