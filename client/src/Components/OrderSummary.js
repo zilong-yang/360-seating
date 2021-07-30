@@ -8,6 +8,7 @@ const OrderSummary = (props) => {
 
     const [order, ] = useState(props.order);
     const [user, ] = useState(props.user);
+    const [finished, setFinished] = useState(false);
 
     useEffect(() => {
         // console.log(order);
@@ -16,11 +17,13 @@ const OrderSummary = (props) => {
 
     const confirmOrder = async () => {
         await OrdersDataService.addOrder(order, user);
+        setFinished(true);
     }
 
     return (
         <>
             <Backdrop movieID={props.order.movieID} />
+
             <div className='summary-container'>
                 <div className='page-name-container'>
                     <h1 id='page-name'>Order Summary</h1>
@@ -45,8 +48,17 @@ const OrderSummary = (props) => {
                 </div>
             </div>
 
-                <BackButton />
-                <NextButton name={'Confirm'} action={confirmOrder} />
+            {finished ?
+                <div className='thank-you-container'>
+                    <p>Your order has been submitted</p>
+                    <p>Enjoy the movie!</p>
+                </div>
+                : null
+            }
+
+
+            <BackButton />
+            <NextButton name={'Confirm'} action={confirmOrder} />
         </>
     )
 }
