@@ -1,30 +1,43 @@
-import React, { useState } from 'react';
+import React, {useEffect, useState} from 'react';
 import MovieBrowser from './Components/MovieBrowser'
 import TicketSelection from './Components/TicketSelection'
 import Checkout from './Components/Checkout'
 import { BrowserRouter as Router, Route, Switch } from 'react-router-dom';
 import SeatSelection from "./Components/SeatSelection";
 import OrderSummary from "./Components/OrderSummary";
-import Backdrop from "./Components/Backdrop";
 
 require('dotenv').config()
 
+// custom hook for a state that syncs with browser's local storage
+const useStorageState = (defaultValue, key) => {
+    const [value, setValue] = useState(() => {
+        const storedValue = window.localStorage.getItem(key);
+        return storedValue !== null ? JSON.parse(storedValue) : defaultValue;
+    });
+
+    useEffect(() => {
+        window.localStorage.setItem(key, JSON.stringify(value));
+    }, [key, value]);
+
+    return [value, setValue];
+}
+
 function App() {
 
-    const [movieID, setMovieID] = useState(0);
+    const [movieID, setMovieID] = useStorageState(0, 'movieID');
 
     // order detail
-    const [movieName, setMovieName] = useState("");
-    const [movieTime, setMovieTime] = useState("");
-    const [numAdults, setNumAdults] = useState(0);
-    const [numChildren, setNumChildren] = useState(0);
-    const [numSeniors, setNumSeniors] = useState(0);
-    const [roomNumber, setRoomNumber] = useState(null);
-    const [seats, setSeats] = useState([]);
-    const [total, setTotal] = useState("");
+    const [movieName, setMovieName] = useStorageState('', 'movieName');
+    const [movieTime, setMovieTime] = useStorageState('', 'movieTime');
+    const [numAdults, setNumAdults] = useStorageState(0, 'numAdults');
+    const [numChildren, setNumChildren] = useStorageState(0, 'numChildren');
+    const [numSeniors, setNumSeniors] = useStorageState(0, 'numSeniors');
+    const [roomNumber, setRoomNumber] = useStorageState(0, 'roomNumber');
+    const [seats, setSeats] = useStorageState([], 'seats');
+    const [total, setTotal] = useStorageState(0, 'total');
 
     // user info
-    const [user, setUser] = useState({});
+    const [user, setUser] = useStorageState({}, 'user');
 
     return (
         <>
