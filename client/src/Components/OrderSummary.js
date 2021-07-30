@@ -7,17 +7,21 @@ import Backdrop from "./Backdrop";
 const OrderSummary = (props) => {
 
     const [order, ] = useState(props.order);
+    const [orderID, setOrderID] = useState('');
     const [user, ] = useState(props.user);
     const [finished, setFinished] = useState(false);
 
-    useEffect(() => {
-        // console.log(order);
-        // console.log(user);
+    useEffect(async () => {
+        let res = await OrdersDataService.getOrders();
+        console.log(res.data.orders);
     });
 
     const confirmOrder = async () => {
-        await OrdersDataService.addOrder(order, user);
+        let res = await OrdersDataService.addOrder(order, user);
         setFinished(true);
+
+        let orderID = res.data.response.insertedId;
+        setOrderID(orderID);
     }
 
     return (
@@ -48,17 +52,22 @@ const OrderSummary = (props) => {
                 </div>
             </div>
 
-            {finished ?
-                <div className='thank-you-container'>
-                    <p>Your order has been submitted</p>
-                    <p>Enjoy the movie!</p>
-                </div>
-                : null
+            {
+                finished ?
+                    <>
+                        <div className='thank-you-container'>
+                            <p>Your order has been placed</p>
+                            <p>Order ID: {orderID}</p>
+                            <hr width={'100%'} />
+                            <p>Enjoy the movie!</p>
+                        </div>
+                        <NextButton name={'Home'} link={'/'} />
+                    </>
+                    :
+                    <NextButton name={'Confirm'} action={confirmOrder} />
             }
 
-
             <BackButton />
-            <NextButton name={'Confirm'} action={confirmOrder} />
         </>
     )
 }
