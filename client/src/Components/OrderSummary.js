@@ -64,10 +64,11 @@ const OrderSummary = (props) => {
                         <NextButton name={'Home'} link={'/'} />
                     </>
                     :
-                    <NextButton name={'Confirm'} action={confirmOrder} />
+                    <>
+                        <NextButton name={'Confirm'} action={confirmOrder} />
+                        <BackButton />
+                    </>
             }
-
-            <BackButton />
         </>
     )
 }
