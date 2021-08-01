@@ -101,6 +101,7 @@ function App() {
                                 seats: seats,
                                 total: total
                             }}
+                            user={user}
                             setters={{
                                 setTotal: setTotal,
                                 setUser: setUser,
