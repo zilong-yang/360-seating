@@ -39,12 +39,25 @@ function App() {
     // user info
     const [user, setUser] = useStorageState({}, 'user');
 
+    const resetStates = () => {
+        setMovieID(0);
+        setMovieName("");
+        setMovieName("");
+        setNumAdults(0);
+        setNumChildren(0);
+        setNumSeniors(0);
+        setRoomNumber(0);
+        setSeats([]);
+        setTotal(0);
+        setUser({});
+    }
+
     return (
         <>
             <Router>
                 <Switch>
                     <Route path="/" exact render={(props) => (
-                        <MovieBrowser {...props} />
+                        <MovieBrowser {...props} resetStates={resetStates} />
                     )} />
                     <Route path="/tickets/:movieID" exact render={(props) => (
                         <TicketSelection
