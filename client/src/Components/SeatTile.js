@@ -19,14 +19,16 @@ class SeatTile extends React.Component {
     }
 
     setClassName() {
-        let names = "";
+        let names = "seat";
 
         if (!this.props.isAvailable) {
-            names = "seat unavailable";
-        } else if (this.props.isHandicapped) {
-            names = "seat handicapped";
-        } else {
-            names = "seat"
+            names += " unavailable";
+        } else if (this.props.isSelected) {
+            names += " selected"
+        }
+
+        if (this.props.isHandicapped) {
+            names += " handicapped";
         }
 
         return names;

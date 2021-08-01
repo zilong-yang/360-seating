@@ -12,7 +12,7 @@ class SeatSelection extends React.Component {
         this.state = {
             loading: true,
             curSeat: [],
-            seatPos: [],
+            seatPos: this.props.order.seats,
             seatImg: []
         }
     }
@@ -80,6 +80,7 @@ class SeatSelection extends React.Component {
                     key={index}
                     isAvailable={seat.isAvailable}
                     isHandicapped={seat.isHandicapped}
+                    isSelected={this.state.seatPos.includes(seat.position)}
                     position={seat.position}
                     seatImg={seat.seatViewUrl}
                     selectFunc={this.handleSelectedSeat}
