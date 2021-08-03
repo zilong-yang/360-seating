@@ -44,3 +44,19 @@
 	margin: auto;
 	padding-bottom: 10px;
 }
+
+.thank-you-container {
+	width: 25%;
+	margin: 50px auto auto;
+	font-size: 1em;
+
+	background: rgba(10, 100, 20, 0.55);
+	padding: 10px;
+	border-radius: 10px;
+	color: rgba(228, 233, 237, 1);
+}
+
+.thank-you-container > p {
+	width: fit-content;
+	margin: auto;
+}
