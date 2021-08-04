@@ -16,6 +16,10 @@ class MovieBrowser extends React.Component {
 
     // Performing API Call
     async componentDidMount() {
+        // clear local storage (previously saved data)
+        window.localStorage.clear();
+        this.props.resetStates();
+
         const movies = await MoviesDataService.fetchNowPlaying();
 
         this.setState({

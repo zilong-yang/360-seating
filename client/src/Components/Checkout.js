@@ -8,14 +8,14 @@ class Checkout extends React.Component {
         super(props)
 
         this.state = {
-            fname: null,
-            lname: null,
-            email: null,
-            phone: null,
-            ccnum: null,
-            ccname: null,
-            expdate: null,
-            ccv: null,
+            fname: this.props.user.fname,
+            lname: this.props.user.lname,
+            email: this.props.user.email,
+            phone: this.props.user.phone,
+            ccnum: this.props.user.ccnum,
+            ccname: this.props.user.ccname,
+            expdate: this.props.user.expdate,
+            ccv: this.props.user.ccv,
             total: null
         }
     }
@@ -59,33 +59,96 @@ class Checkout extends React.Component {
                                     <h2 className="checkout-block-title">Personal Information</h2>
 
                                     <label>First Name</label>
-                                    <input type="text" id="fname" name="firstname" placeholder="John" onChange={this.updateInfo} required />
+                                    <input
+                                        type="text"
+                                        id="fname"
+                                        name="firstname"
+                                        placeholder="John"
+                                        value={this.state.fname}
+                                        onChange={this.updateInfo}
+                                        required
+                                    />
 
                                     <label>Last Name</label>
-                                    <input type="text" id="lname" name="lastname" placeholder="Smith" onChange={this.updateInfo} required />
+                                    <input
+                                        type="text"
+                                        id="lname"
+                                        name="lastname"
+                                        placeholder="Smith"
+                                        value={this.state.lname}
+                                        onChange={this.updateInfo}
+                                        required
+                                    />
 
                                     <label>Email</label>
-                                    <input type="text" id="email" name="email" placeholder="smithj123@email.com" onChange={this.updateInfo} required />
+                                    <input
+                                        type="text"
+                                        id="email"
+                                        name="email"
+                                        placeholder="smithj123@email.com"
+                                        value={this.state.email}
+                                        onChange={this.updateInfo}
+                                        required
+                                    />
 
                                     <label>Phone Number</label>
-                                    <input type="text" id="phone" name="phonenumber" placeholder="800555555" onChange={this.updateInfo} required />
-
+                                    <input
+                                        type="text"
+                                        id="phone"
+                                        name="phonenumber"
+                                        placeholder="800555555"
+                                        value={this.state.phone}
+                                        onChange={this.updateInfo}
+                                        required
+                                    />
                                 </div>
+
                                 <div className="cc-info">
                                     <h2 className="checkout-block-title">Credit Card Information</h2>
 
                                     <label>Name on Credit Card</label>
-                                    <input type="text" id="ccname" name="cardname" placeholder="John Smith" onChange={this.updateInfo} required />
+                                    <input
+                                        type="text"
+                                        id="ccname"
+                                        name="cardname"
+                                        placeholder="John Smith"
+                                        value={this.state.ccname}
+                                        onChange={this.updateInfo}
+                                        required
+                                    />
 
                                     <label>Credit Card Number</label>
-                                    <input type="text" id="ccnum" name="cardbum" placeholder="1111-2222-3333-4444" onChange={this.updateInfo} required />
-
+                                    <input
+                                        type="text"
+                                        id="ccnum"
+                                        name="cardbum"
+                                        placeholder="1111-2222-3333-4444"
+                                        value={this.state.ccnum}
+                                        onChange={this.updateInfo}
+                                        required
+                                    />
 
                                     <label>Expiration Date</label>
-                                    <input type="text" id="expdate" name="expdate" placeholder="01/21" onChange={this.updateInfo} required />
+                                    <input
+                                        type="text"
+                                        id="expdate"
+                                        name="expdate"
+                                        placeholder="01/21"
+                                        value={this.state.expdate}
+                                        onChange={this.updateInfo}
+                                        required
+                                    />
 
                                     <label>CCV</label>
-                                    <input type="text" id="ccv" name="ccv" placeholder="123" onChange={this.updateInfo} required />
+                                    <input
+                                        type="text"
+                                        id="ccv"
+                                        name="ccv"
+                                        placeholder="123"
+                                        value={this.state.ccv}
+                                        onChange={this.updateInfo}
+                                        required
+                                    />
                                 </div>
                             </div>
                             <div className="cart">
