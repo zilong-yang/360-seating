@@ -2,6 +2,7 @@ import React from 'react';
 import MovieTile from './MovieTile';
 import MoviesDataService from '../services/Movies'
 import TheatersDataService from "../services/Theaters";
+import logo from "../images/fishermanLogo.png"
 
 class MovieBrowser extends React.Component {
     constructor(props) {
@@ -46,7 +47,10 @@ class MovieBrowser extends React.Component {
             // <div> should wrap the return values (there is only a single element)
             // <p>Fisherman's Cinema</p>
             <>
-                <p className="title">Fisherman's Cinema</p>
+                <div className="homePageHeader">
+                    <img className="logo_img" src={logo}/>
+                    <p className="title">Fisherman's Cinema</p>
+                </div>
                 <div className="movieBrowserContainer">
                     {this.state.loading ?
                         <p>Loading</p> :
