@@ -94,6 +94,8 @@ exports.setSeatAvailability = async (req, res) => {
             { $set: { rooms: theater.rooms } }
         )
 
+        console.log(updateRes)
+
         res.status(200).json({
             room_id: roomID,
             position: seat.position,
