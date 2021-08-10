@@ -47,7 +47,7 @@ const OrderSummary = (props) => {
 
                 <div className='summary'>
                     <p>Movie: {order.movieName}</p>
-                    <p>Time: {order.movieTime}</p>
+                    <p>Time: 6:00 PM</p>
                     <p>Room {order.roomNumber}</p>
                     <p>{order.numAdults + order.numChildren + order.numSeniors} Tickets</p>
                     <p>Seats: {order.seats.sort().reduce((s, seat) => s.concat(seat).concat(" "), "")}</p>
