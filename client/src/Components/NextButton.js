@@ -21,11 +21,18 @@ function NextButton(props) {
 
     return (
         <div className="nav-button-container next-button-container">
-            <i
+           {props.name === "Home" ? 
+                <i
+                    className="fas fa-home fa-3x nav-button next-button"
+                    onClick={fireOnClick}
+                ></i>
+                :
+                <i
                 className="fas fa-arrow-circle-right fa-3x nav-button next-button"
                 onClick={fireOnClick}
-            >
-            </i>
+            ></i> 
+            }
+            
             <div className='name'>{props.name ? props.name : <>Next</>}</div>
         </div>
     )

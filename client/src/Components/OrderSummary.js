@@ -2,6 +2,7 @@ import {useState, useEffect} from "react";
 import BackButton from "./BackButton";
 import NextButton from "./NextButton";
 import OrdersDataService from "../services/Orders";
+import TheaterDataService from "../services/Theaters";
 import Backdrop from "./Backdrop";
 
 const OrderSummary = (props) => {
@@ -18,10 +19,20 @@ const OrderSummary = (props) => {
 
     const confirmOrder = async () => {
         let res = await OrdersDataService.addOrder(order, user);
+
+        await setSeats(order);
+
         setFinished(true);
 
         let orderID = res.data.response.insertedId;
         setOrderID(orderID);
+    }
+
+    async function setSeats(order){
+        await Promise.all(order.seats.map(async (seat) => {
+            const res = await TheaterDataService.setSeatAvailability(order.roomNumber, seat);
+            console.log(res)
+        }));
     }
 
     return (
@@ -52,6 +63,7 @@ const OrderSummary = (props) => {
                 </div>
             </div>
 
+            
             {
                 finished ?
                     <>
@@ -65,6 +77,9 @@ const OrderSummary = (props) => {
                     </>
                     :
                     <>
+                        <div className="confirmTextContainer">
+                            <p className="confirmText">Click the Arrow Below to Confirm Your Order!</p>
+                        </div>
                         <NextButton name={'Confirm'} action={confirmOrder} />
                         <BackButton />
                     </>

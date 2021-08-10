@@ -60,3 +60,16 @@
 	width: fit-content;
 	margin: auto;
 }
+
+.confirmText{
+	text-align: center;
+}
+.confirmTextContainer{
+	width: 25%;
+    margin: 50px auto auto;
+    font-size: 1em;
+    background: rgba(27, 134, 235, 0.55);
+    padding: 5px;
+    border-radius: 10px;
+    color: rgba(228, 233, 237, 1);
+}
